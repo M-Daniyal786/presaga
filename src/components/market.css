@@ -1,0 +1,106 @@
+.marketsIdTexte {
+  border-left: 2px bold antiquewhite;
+}
+
+.mt-2 {
+  margin-top: 3rem !important;
+}
+
+.nav-link {
+  padding: 0px;
+}
+.markets .nav-link.active {
+  background-color: #414749;
+  /* border-radius: 15px; */
+  border-color: transparent;
+
+  margin-right: 0px;
+  /* border-color: #dee2e6 #dee2e6 #fff; */
+}
+
+.markets .nav-link:hover {
+  background-color: #757575;
+  /* border-radius: 15px; */
+  margin-right: 0px;
+  border-color: transparent;
+  /* border-color: #dee2e6 #dee2e6 #fff; */
+}
+.sharesLiquidityToggleLG {
+  width: 500px;
+  margin: 0 auto;
+
+  background-color: transparent;
+  border-radius: 15px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+@media (max-width: 790px) {
+  .sharesLiquidityToggleLG {
+    width: 90%;
+  }
+}
+
+.tab-content {
+  margin-top: 3%;
+}
+
+.nav-tabs {
+  border-bottom: none;
+  padding: 0px;
+  text-align: center;
+}
+
+link.active {
+  /* color: #495057; */
+  /* background-color: #fff; */
+  /* border-color: #dee2e6 #dee2e6 #fff; */
+}
+
+.nav-tabs .nav-link {
+  /* margin-right: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem; */
+}
+
+link.active {
+  /* background-color: #fff; 
+    border-color: #dee2e6 #dee2e6 #fff; */
+}
+
+.markets .nav-item {
+  padding: 0px;
+  background-color: #1f2123;
+}
+
+.four h1 {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.5em;
+  padding-top: 5px;
+  padding-bottom: 11px;
+  position: relative;
+  color: antiquewhite;
+  margin: 0px;
+}
+.nav-link.active .four h1:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  /* margin: auto; */
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #d85439;
+}
+.nav-link.active .four h1:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  height: 1px;
+  width: 0%;
+  max-width: 255px;
+  background-color: #d85439;
+}

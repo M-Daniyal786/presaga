@@ -1,0 +1,25 @@
+.navbar {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+.navLogo {
+  max-width: 240px;
+  width: 30px;
+  height: 50px;
+}
+
+.navbar ul li {
+  padding-right: 5px;
+}
+
+.nav-item:hover {
+  color: brown;
+}

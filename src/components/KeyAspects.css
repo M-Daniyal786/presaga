@@ -1,0 +1,16 @@
+.keyAspectsIcons{
+    color: #d85439;
+    font-size: 33px;
+    text-align: center;
+}
+
+.keyAspectsIcons:hover {
+    color: antiquewhite;
+}
+
+.keyAspectsText h3{
+    color: antiquewhite;
+    text-align: center;
+    padding-top: 15px;
+    font-size: 21px;
+}

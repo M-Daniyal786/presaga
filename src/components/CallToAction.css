@@ -1,0 +1,142 @@
+#headingMain {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#headingSpan {
+  color: #fffafa !important;
+  font-family: 'Poppins';
+  font-size: 29px;
+  text-align: center;
+  width: 40%;
+  margin-top: 20px;
+  border-top: 1px solid white;
+  padding: 50px;
+}
+
+#imgBorder {
+  border-bottom: 1px solid white;
+  padding: 50px;
+}
+
+#mainDiv {
+  background: url(../../public/hero.png);
+  height: 120vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+#btnSet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#btnLaunchDiv {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #e73b22;
+  border-radius: 25px;
+  color: white;
+  width: 300px;
+  height: 60px;
+  border-color: tomato;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+div#btnLaunchDiv button#btnLaunch {
+  transition: 0.5s;
+  transform: translateX(0px);
+}
+div#btnLaunchDiv:hover button#btnLaunch {
+  transition: 0.5s;
+  transform: translateX(-60px);
+}
+div#btnLaunchDiv:hover img {
+  transition: 0.5s;
+  transform: translateX(160px);
+}
+div#btnLaunchDiv img {
+  transition: 0.5s;
+  transform: translateX(0px);
+}
+#imgSet {
+  /* position: relative !important; */
+  height: auto !important;
+  width: 30px !important;
+}
+#btnLaunchDiv div {
+  overflow: inherit !important;
+}
+
+#btnLaunch {
+  background: transparent;
+  border: none;
+  color: white;
+  font-weight: 500;
+  font-size: 22px !important;
+}
+
+#btnBuyUnit {
+  background: transparent;
+  border: none;
+  color: #e73b22;
+  font-weight: 600;
+  font-size: 22px !important;
+}
+
+#btnSetUnitDiv {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: white;
+  border-radius: 25px;
+  color: #e73b22;
+  width: 300px;
+  height: 60px;
+  border-color: tomato;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#imgSetUnit {
+  /* position: relative !important; */
+  height: auto !important;
+  width: 30px !important;
+}
+
+#btnSetUnitDiv div {
+  overflow: inherit !important;
+}
+
+div#btnSetUnitDiv button#btnBuyUnit {
+  transition: 0.5s;
+  transform: translateX(0px);
+}
+div#btnSetUnitDiv:hover button#btnBuyUnit {
+  transition: 0.5s;
+  transform: translateX(-60px);
+}
+div#btnSetUnitDiv:hover img {
+  transition: 0.5s;
+  transform: translateX(160px);
+}
+div#btnSetUnitDiv img {
+  transition: 0.5s;
+  transform: translateX(0px);
+}

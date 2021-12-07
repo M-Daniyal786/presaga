@@ -1,0 +1,33 @@
+.activeMarketList{
+    color: antiquewhite;
+    margin-right: 10%;
+    margin-bottom: 7%;
+}
+
+.headerOfTable{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding-bottom: 10px;
+    border-bottom: 2px solid antiquewhite;
+    font-weight: bold;
+}
+
+.marketRowItem {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: #343a40;
+    margin-top: 7px;
+}
+
+.marketRowItem:hover {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: #1b354c;
+    color: antiquewhite;
+    cursor: pointer;
+    box-shadow: rgba(206, 168, 150, 0.25) 0px 50px 100px -20px, rgba(218, 138, 138, 0.3) 0px 30px 60px -30px;
+}
+
+.marketItemIcon {
+    text-align: center;
+}
