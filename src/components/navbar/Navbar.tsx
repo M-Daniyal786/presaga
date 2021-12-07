@@ -74,11 +74,11 @@ const Navbar = () => {
 
   useOnClickOutside(node, () => setOpen(false))
   return (
-    <NavBackground>
-      <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
-        <div class="container-fluid">
+    <>
+      <nav class="navbar navbar-expand-lg sticky-top navbar-dark navbar-inner p-5">
+        <div class="container w-100">
           <a class="navbar-brand" href="/">
-            <img src="PreSaga_Icon.png" class="navLogo" alt="PreSaga Logo" />
+            <img src="Presaga_logo.png" class="navLogo" alt="PreSaga Logo" />
           </a>
           <button
             class="navbar-toggler"
@@ -91,8 +91,11 @@ const Navbar = () => {
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto">
+          <div
+            class="collapse navbar-collapse nav-menu-item"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav">
               <li class="nav-item text-center">
                 <a class="nav-link active" aria-current="page" href="/faucet">
                   Faucet
@@ -122,7 +125,7 @@ const Navbar = () => {
                 </a>
               </li>
             </ul>
-            <form class="d-flex">
+            <form class="d-flex justify-content-center">
               <button
                 type="button"
                 class="btn btn-primary btn-lg learn_more"
@@ -228,7 +231,7 @@ const Navbar = () => {
           </HamburgerMenu>
         </NavContainer>
       </BodyContainer>*/}
-    </NavBackground>
+    </>
   )
 }
 

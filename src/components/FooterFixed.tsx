@@ -8,12 +8,12 @@ import { SiTelegram, SiDiscord } from 'react-icons/si'
 
 const FooterFixed = () => {
   return (
-      <div class="container  " >
-        <footer class="d-flex flex-wrap justify-content-between align-items-center ">
-        <p class="nav col-md-4 col-12 mb-0 font-weight-bold footerItem justify-content-md-center justify-content-center text-center">
+      <div class=" footer-container " >
+        <footer class="d-flex flex-wrap justify-content-between align-items-center col-12">
+        <p class="nav col-md-6 col-12 mb-0 font-weight-bold footerItem justify-content-md-center justify-content-center text-center">
             &copy; 2021 UnityNetwork OÜ. ALL RIGHTS RESERVED.
           </p>
-          <ul class="nav col-md-4 col-12 justify-content-md-start justify-content-center">
+          {/* <ul class="nav col-md-4 col-12 justify-content-md-start justify-content-center">
             <li class="nav-item">
               <a
                 href="#"
@@ -38,11 +38,37 @@ const FooterFixed = () => {
                 Disclaimer
               </a>
             </li>
-          </ul>
+          </ul> */}
 
           
 
-          <ul class="nav col-md-4 col-12 justify-content-md-end justify-content-center list-unstyled d-flex">
+        <ul class="nav col-md-6 col-12 justify-content-center align-items-center list-unstyled d-flex">
+          
+        <li class="nav-item">
+              <a
+                href="#"
+                class="nav-link px-2 font-weight-bold footerItem clickable"
+              >
+                Contact
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="#"
+                class="nav-link px-2 font-weight-bold footerItem clickable"
+              >
+                Privacy
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="#"
+                class="nav-link px-2 font-weight-bold footerItem clickable"
+              >
+                Disclaimer
+              </a>
+            </li>
+
             <li class="ms-3">
               <a class="font-weight-bold footerItem icon" href="#">
                 <AiOutlineTwitter />

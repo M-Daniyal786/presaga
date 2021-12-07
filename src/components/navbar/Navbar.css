@@ -8,11 +8,25 @@
     padding-left: 5%;
     padding-right: 5%;
   }
+
+  .nav-menu-item {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .nav-menu-item {
+    display: flex;
+    justify-content: flex-end;
+  }
+
 }
 
 .navLogo {
-  max-width: 240px;
-  width: 30px;
+  max-width: "100%";
+  /* width: 30px; */
   height: 50px;
 }
 
@@ -22,4 +36,8 @@
 
 .nav-item:hover {
   color: brown;
+}
+
+.navbar.transparent.navbar-inverse .navbar-inner {
+  background: rgba(0, 0, 0, 0.4);
 }

@@ -59,7 +59,7 @@ const Home = () => {
         <KeyAspects />
       </BodyContainer>
 
-      <Footer />
+      <Footer/>
     </>
   )
 }

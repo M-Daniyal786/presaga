@@ -6,7 +6,7 @@ import KeyAspects from '../components/KeyAspects'
 import AktiveMarkets from '../components/ActiveMarkets'
 import MyMarkets from '../components/MyMarkets'
 import ResolvedAndClosedMarkets from '../components/ResolvedAndClosedMarkets'
-import Footer from '../components/Footer'
+import Footer from '../components/FooterFixed'
 import styled from 'styled-components'
 import { H2, H4Bold } from '../components/shared/Text'
 import { BodyContainer } from '../components/shared/Containers'
@@ -68,7 +68,9 @@ const Markets = () => {
   }
 
   return (
-    <>
+    <div style={{ backgroundImage: `url("dark-background-lunar.jpeg")`, backgroundPosition: 'center', backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat' , height:"100vh"}}>
+      {/* <Image src={BackLunarBg} alt="Picture of the author" /> */}
       <Navbar />
       <BodyContainer>
         <ButtonRow id="markets">
@@ -114,9 +116,13 @@ const Markets = () => {
           </div>
         )}
       </BodyContainer>
+      
 
+      
       <Footer />
-    </>
+        
+        
+    </div>
   )
 }
 
