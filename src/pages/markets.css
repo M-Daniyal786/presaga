@@ -1,0 +1,25 @@
+.togButtons{
+    margin-top: 25px;
+    margin-left: 5%;
+    margin-right: 5%;
+    
+}
+
+.btn-group {
+    border-radius: 25px;
+}
+
+.togButtonsElm {
+    background-color: #d85439;
+    color: antiquewhite;
+}
+
+.togButtonsElm:hover {
+    background-color: antiquewhite;
+    color: #d85439;
+}
+
+.togButtonsElm:active {
+    background-color: antiquewhite;
+    color: #d85439;
+}
