@@ -1,49 +1,225 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
 import { ComponentContainer } from './shared/Containers'
+import Image from 'next/image'
 import Elipse from './shared/Elipse'
-import { H2, H3 } from './shared/Text'
-import {BsFillMouse3Fill} from 'react-icons/bs'
-import {BiNetworkChart} from 'react-icons/bi'
-import {RiVipLine} from 'react-icons/ri'
-import {VscServerEnvironment} from 'react-icons/vsc'
-import {GiClick, GiCrownCoin} from 'react-icons/gi'
+import rocket from '../../public/rocket.png'
+import AliceCarousel from 'react-alice-carousel'
+import 'react-alice-carousel/lib/alice-carousel.css'
+import { IoMdArrowRoundBack } from 'react-icons/io'
+import { IoMdArrowRoundForward } from 'react-icons/io'
 
 const KeyAspects = () => {
-  return (
-    <ComponentContainer>
-      <div class="three"><h1>Key aspects </h1></div>
-      
-
-  <div class="container px-4 py-5" id="featured-3">
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-      <div class="feature col keyAspectsText">
-        <div class="feature-icon  keyAspectsIcons">
-          <GiClick  />
-        </div>
-        <h3>Two-click trade interface</h3>
+  const carouselRef = useRef(null)
+  const items = [
+    <div
+      style={{
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '80px',
+      }}
+    >
+      <img style={{ width: '25%' }} src="coin-01.png" />
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          width: '50%',
+        }}
+      >
+        <span
+          style={{ fontSize: '60px', fontFamily: 'Raleway', color: 'white' }}
+        >
+          Token Name
+        </span>
+        <span
+          style={{
+            fontSize: '26px',
+            fontFamily: 'Poppins',
+            color: 'white',
+          }}
+        >
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry lorem Ipsum has been the industry's standard dummy.
+        </span>
+        <button
+          style={{ marginTop: '20px', fontFamily: 'Poppins' }}
+          id="btnBuy"
+        >
+          Buy Now
+        </button>
       </div>
-      
-      <div class="feature col keyAspectsText">
-      <div class="feature-icon  keyAspectsIcons">
-      <VscServerEnvironment  />
-        </div>
-        <h3>Constant Product Market Maker providing a seamless and instant
-            traing experience</h3>
+    </div>,
+    <div
+      style={{
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '80px',
+      }}
+    >
+      <img style={{ width: '25%' }} src="coin-02.png" />
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          width: '50%',
+        }}
+      >
+        <span
+          style={{ fontSize: '60px', fontFamily: 'Raleway', color: 'white' }}
+        >
+          Token Name
+        </span>
+        <span
+          style={{
+            fontSize: '26px',
+            fontFamily: 'Poppins',
+            color: 'white',
+          }}
+        >
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry lorem Ipsum has been the industry's standard dummy.
+        </span>
+        <button
+          style={{ marginTop: '20px', fontFamily: 'Poppins' }}
+          id="btnBuy"
+        >
+          Buy Now
+        </button>
       </div>
-      <div class="feature col keyAspectsText">
-        <div class="feature-icon  keyAspectsIcons">
-          <GiCrownCoin  style={{transform:'rotate(60deg)'}}/>
-        </div>
-        <h3>UNT token as trade currency across all markets</h3>
-      </div>
+    </div>,
+    <div
+    style={{
+      width: '100%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: '80px',
+    }}
+  >
+    <img style={{ width: '25%' }} src="coin-03.png" />
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        width: '50%',
+      }}
+    >
+      <span
+        style={{ fontSize: '60px', fontFamily: 'Raleway', color: 'white' }}
+      >
+        Token Name
+      </span>
+      <span
+        style={{
+          fontSize: '26px',
+          fontFamily: 'Poppins',
+          color: 'white',
+        }}
+      >
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry lorem Ipsum has been the industry's standard dummy.
+      </span>
+      <button
+        style={{ marginTop: '20px', fontFamily: 'Poppins' }}
+        id="btnBuy"
+      >
+        Buy Now
+      </button>
     </div>
   </div>
+  ]
 
-  <div class="col-12 text-center"> 
-      <button type="button" class="btn btn-primary btn-lg learn_more" href="https://unitynetwork.medium.com/presaga-a-summary-of-unity-networks-first-dapp-6012f84693a8"
-          target="_blank">Start Trading Now </button>
-  </div>
+  const playNext = () => {
+    console.log('Next')
+    carouselRef.current.slideNext()
+  }
+
+  const playPrev = () => {
+    console.log('Previous')
+    carouselRef.current.slidePrev()
+  }
+  // console.log(carouselRef.current.slideNext)
+  return (
+    <ComponentContainer>
+      <div style={{ width: '100%' }}>
+        <div id="keyAspectHeading">
+          <span style={{ fontFamily: 'Raleway' }} id="keyAspectSpan">
+            Key Aspects
+          </span>
+          <div id="btnStartDiv" onClick={playNext}>
+            <Image id="imgSetStart" src={rocket} alt="" />
+            <button id="btnStart">Start Trading Now </button>
+          </div>
+        </div>
+        <div id="divSetAspectKey">
+          <div id="contentDiv">
+            <img
+              style={{ width: '80px', height: '100px' }}
+              src="key-aspects-01.png"
+            />
+            <span id="setAspectinnerheading" style={{ fontFamily: 'Poppins' }}>
+              Two-click trade interface
+            </span>
+          </div>
+
+          <div id="contentDiv">
+            <img
+              style={{ width: '100px', height: '100px' }}
+              src="key-aspects-02.png"
+            />
+            <span id="setAspectinnerheading" style={{ fontFamily: 'Poppins' }}>
+              Constant Product Market Maker providing a seamless and instant
+              training experience
+            </span>
+          </div>
+
+          <div id="contentDiv">
+            <img
+              style={{ width: '100px', height: '100px' }}
+              src="key-aspects-03.png"
+            />
+            <span id="setAspectinnerheading" style={{ fontFamily: 'Poppins' }}>
+              UNT token as trade currency across all markets
+            </span>
+          </div>
+        </div>
+
+        <div id="sliderHeading">
+          <span
+            style={{ fontFamily: 'Raleway', fontSize: '60px', color: 'white' }}
+          >
+            Buy Our Token
+          </span>
+
+          <div>
+            <IoMdArrowRoundBack
+              size={70}
+              style={{ color: 'white' }}
+              onClick={playNext}
+            />
+            <IoMdArrowRoundForward
+              size={70}
+              style={{ color: 'white' }}
+              onClick={playPrev}
+            />
+          </div>
+        </div>
+
+        <div style={{ marginTop: '100px', width: '100%' }}>
+          <AliceCarousel
+            ref={carouselRef}
+            mouseTracking
+            items={items}
+            infinite
+            controlsStrategy="alternate"
+          />
+        </div>
+      </div>
     </ComponentContainer>
   )
 }
@@ -75,11 +251,6 @@ const Aspect = styled.div`
   @media (max-width: 768px) {
     width: 100%;
   }
-`
-
-const AspectText = styled(H3)`
-  padding-left: 25px;
-  padding-right: 25px;
 `
 
 const ElipseStyled = styled(Elipse)`

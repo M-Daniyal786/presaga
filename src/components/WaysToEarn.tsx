@@ -1,83 +1,85 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
 import { LinkButton } from './shared/Buttons'
 import { ComponentContainer } from './shared/Containers'
 import Elipse from './shared/Elipse'
 import { H2, H3 } from './shared/Text'
+import ScrollContainer from 'react-indiana-drag-scroll'
+import useDraggableScroll from 'use-draggable-scroll'
 
 const WaysToEarn = () => {
+  const divRef = useRef(null)
+  const { onMouseDown } = useDraggableScroll(divRef, {
+    direction: 'horizontal',
+  })
+
   return (
-    <div>
-      <div class="three">
-        <h1> How PreSaga Works?</h1>
-      </div>
-      <img
-        src="presaga_explained.png"
-        class="d-block mx-lg-auto img-fluid"
-        alt="Bootstrap Themes"
-        width={'100%'}
-        height={'100%'}
-        loading="lazy"
-      />
-
-      <div class="three">
-        <h1> Two ways you can earn using PreSaga</h1>
-      </div>
-
-      <div class="container col-xxl-8 px-3 py-2">
-        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-          <div class="col-10 col-sm-8 col-lg-6">
-            <img
-              src="undraw_crypto_portfolio_2jy5.svg"
-              class="d-block mx-lg-auto img-fluid"
-              alt="Bootstrap Themes"
-              width="700"
-              height="500"
-              loading="lazy"
-            />
-          </div>
-          <div class="col-lg-6">
-            <h1 class="display-5 fw-bold lh-1 mb-3"></h1>
-            <p class="lead">
-              Accurately predict the outcomes of existing markets via the
-              purchase of market-specific <span class="yes_or_no">YES </span> or{' '}
-              <span class="yes_or_no">NO </span> shares.
-            </p>
+    <div style={{ width: '100%' }}>
+      <div id="setMainBody">
+        <div className="three">
+          <h1> How PreSaga Works?</h1>
+          <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+            <img style={{ width: '40px', height: '40px' }} src="hand.png" />
+            <span style={{ color: 'white', fontSize: '20px' }}>
+              Slide to right
+            </span>
           </div>
         </div>
-      </div>
 
-      <div class="container col-xxl-8 px-3 py-2">
-        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-          <div class="col-lg-6">
-            <h1 class="display-5 fw-bold lh-1 mb-3"></h1>
-            <p class="lead">
-              Collect liquidity provider fees by adding liquidity, in the form
-              of UNT, to active markets.
-            </p>
-          </div>
-          <div class="col-10 col-sm-8 col-lg-6">
-            <img
-              src="undraw_wallet_aym5.svg"
-              class="d-block mx-lg-auto img-fluid"
-              alt="Bootstrap Themes"
-              width="700"
-              height="500"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 text-center">
-        <button
-          type="button"
-          class="btn btn-primary btn-lg learn_more"
-          href="https://unitynetwork.medium.com/presaga-a-summary-of-unity-networks-first-dapp-6012f84693a8"
-          target="_blank"
+        <div
+          className="scroll-container"
+          ref={divRef}
+          onMouseDown={onMouseDown}
         >
-          Learn more{' '}
-        </button>
+          <div className="gridscroll">
+            <img
+              className="Img"
+              src="workflow.png"
+              // class="d-block mx-lg-auto img-fluid"
+              // alt="Bootstrap Themes"
+              // width={'100%'}
+              // height={'100%'}
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div id="preSaga">
+        <div id="twoWays">
+          <div id="headingWays">
+            <span id="headingOne" style={{ fontFamily: 'Raleway' }}>
+              Two ways you
+            </span>
+            <span id="headingOne">
+              can earn using <strong id="strongTag">PreSaga</strong>
+            </span>
+            <span id="paraWays">
+              Accurately predict the outcomes of existing {'\n'} markets via the
+              purchase of market-specific <strong id="strongTag"> YES </strong>{' '}
+              or <strong id="strongTag">NO</strong> shares.
+            </span>
+          </div>
+          <img id="imgOne" src="oneway.png" />
+        </div>
+
+        <div id="sectionTwo">
+          <img id="imgTwo" src="twoway.png" />
+          <div id="sectionTwoSet">
+            <span id="spanHead" style={{ fontFamily: 'Raleway' }}>
+              Collect liquidity
+            </span>
+            <span
+              id="spanHeadTwo"
+              style={{
+                fontFamily: 'Poppins',
+              }}
+            >
+              provider fees by adding liquidity, in the form of{' '}
+              <strong id="strongTag">UNT</strong>, to active markets.
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   )

@@ -9,7 +9,7 @@ import './markets.css'
 import '../components/ActiveMarkets.css'
 import '../components/market.css'
 import '../components/court.css'
-import "../components/CallToAction.css"
+import '../components/CallToAction.css'
 
 const GlobalStyle = createGlobalStyle`
   body {
