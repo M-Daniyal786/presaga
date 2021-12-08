@@ -44,7 +44,7 @@ const PanelContainer = styled.div`
   box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   padding: 20px;
-
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

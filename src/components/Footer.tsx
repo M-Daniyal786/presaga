@@ -6,9 +6,9 @@ import { H4Bold } from './shared/Text'
 import { AiOutlineTwitter, AiFillLinkedin } from 'react-icons/ai'
 import { SiTelegram, SiDiscord } from 'react-icons/si'
 
-const FooterFixed = () => {
+const Footer = () => {
   return (
-      <div class="container  " >
+      <div class="footer-div" >
         <footer class="d-flex flex-wrap justify-content-between align-items-center ">
         <p class="nav col-md-4 col-12 mb-0 font-weight-bold footerItem justify-content-md-center justify-content-center text-center">
             &copy; 2021 UnityNetwork OÜ. ALL RIGHTS RESERVED.
@@ -69,7 +69,7 @@ const FooterFixed = () => {
   )
 }
 
-export default FooterFixed
+export default Footer
 const FooterBackground = styled.div`
   width: 100%;
   bottom: 0;

@@ -23,7 +23,7 @@ const AktiveMarkets = (props) => {
 
   return (
     <ComponentContainer>
-      <div class="three">
+      <div class="active-market-heading">
         <h1>Active Markets</h1>
       </div>
 
@@ -39,17 +39,19 @@ const DesktopMarket = (props) => {
     <>
       <div class="col-12 activeMarketList">
         <div class="row headerOfTable">
-          <div class="col-6">Market</div>
-          <div class="col-2">Liquidity</div>
-          <div class="col-1 yes_or_no">YES</div>
-          <div class="col-1 yes_or_no">NO</div>
+          <div class="col-6 h4">Market</div>
+          <div class="col-2 h4">Liquidity</div>
+          <div class="col-1 h4">YES</div>
+          <div class="col-1 h4">NO</div>
           <div class="col-2"></div>
         </div>
+        <div style={{backgroundColor:"rgba(255, 255, 255, .2)",padding:30, borderRadius:50}}>
         {data.length > 0 ? (
           data.map((m, idx) => {
             return (
               <div
-                class="row marketRowItem shadow rounded"
+                class="row marketRowItem shadow "
+                style={{borderRadius:30,padding:"3%"}}
                 onClick={() => {
                   router.push({
                     pathname: '/market/[id]',
@@ -70,11 +72,11 @@ const DesktopMarket = (props) => {
 
                 <div class="col-2 marketItem">{formatNumber(m.liquidity)}</div>
 
-                <div class="col-1 marketItem yes_or_no">
+                <div class="col-1 marketItem">
                   {parseFloat(m.yesPrice).toFixed(2)}
                 </div>
 
-                <div class="col-1 marketItem yes_or_no">
+                <div class="col-1 marketItem ">
                   {parseFloat(m.noPrice).toFixed(2)}
                 </div>
 
@@ -104,6 +106,7 @@ const DesktopMarket = (props) => {
             </H4Bold>
           </div>
         )}
+        </div>
       </div>
     </>
   )

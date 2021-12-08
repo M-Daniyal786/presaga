@@ -24,6 +24,7 @@ import { RiShareBoxFill } from 'react-icons/ri'
 import { RPC_URL } from '../../config/network'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { ToastContainer, toast } from 'react-toastify'
+import FooterFixed from '../../components/Footer'
 const marketStates = {
   NO_LIQUIDITY: 0,
   CLOSED: 'true',
@@ -72,21 +73,22 @@ const Market = (props) => {
   }
 
   return (
-    <>
+    <div >
       <ToastContainer />
-      <Navbar />
+      <Navbar folder={"market"}/>
       {/*   {isRefreshing && (
         <h2 style={{ color: 'white' }}>
           Oops, seems that something went wrong while fetching your market,
           check that you have inserted correct address and try again
         </h2>
       )} */}
+      <div style={{display:"flex",flexWrap:"wrap",justifyContent:"center"}}>
       {market.length > 0 ? (
-        <>
+          <div style={{display:"flex",flexWrap:"wrap",justifyContent:"center", maxWidth:"80%"}}>
           <BodyContainer>
             <Row>
               <FlexContainer>
-                <FlexItem flex="60%">
+                <FlexItem flex="100%">
                   <div class="three">
                     <h1>Market </h1>
                   </div>
@@ -95,8 +97,9 @@ const Market = (props) => {
                   </H3_NoScale>
                   <br />
                   <InfoPanel1 data={market[0]} />
-                </FlexItem>
-                <FlexItem flex="40%">
+               
+                {/* <FlexItem flex="40%"> */}
+           
                   <InfoPanelSharesContainer>
                     {market[0].userShares && (
                       <>
@@ -114,6 +117,7 @@ const Market = (props) => {
                       </>
                     )}
                   </InfoPanelSharesContainer>
+                {/* </FlexItem> */}
                 </FlexItem>
               </FlexContainer>
 
@@ -189,8 +193,7 @@ const Market = (props) => {
             </div>
           </div>
 
-          <Footer />
-        </>
+        </div>
       ) : (
         !isRefreshing && (
           <div
@@ -218,8 +221,10 @@ const Market = (props) => {
             </div>
           </div>
         )
-      )}
-    </>
+        )}
+      </div>
+      <FooterFixed />
+    </div>
   )
 }
 
@@ -282,6 +287,7 @@ const FlexContainer = styled.div`
   display: flex;
   flex-direction: row;
   column-gap: 25px;
+  row-gap: 20px;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -291,12 +297,22 @@ const FlexContainer = styled.div`
 
 const InfoPanelSharesContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  row-gap: 25px;
+  flex-direction: row;
+  column-gap: 20px;
+  row-gap: 20px;
 `
 
 const FlexItem = styled.div`
   flex: ${(props) => props.flex || '50%'};
+  column-gap: 20px;
+  @media (max-width: 768px) {
+    flex: 100%;
+  }
+`
+
+const FlexWrappedItem = styled.div`
+  flex: ${(props) => props.flex || '50%'};
+  flex-wrap: wrap;
   @media (max-width: 768px) {
     flex: 100%;
   }

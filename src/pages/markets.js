@@ -20,6 +20,7 @@ import Web3 from 'web3'
 
 import { ToggleButton } from '../components/shared/Buttons'
 import { RPC_URL, supportedNetworkId } from '../config/network'
+import { marketStyles} from './styles'
 
 const Markets = () => {
   const [markets, setMarkets] = useState([])
@@ -68,45 +69,32 @@ const Markets = () => {
   }
 
   return (
-    <div style={{ backgroundImage: `url("dark-background-lunar.jpeg")`, backgroundPosition: 'center', backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat' , height:"100vh"}}>
+    <div style={marketStyles.imageContainer}>
       {/* <Image src={BackLunarBg} alt="Picture of the author" /> */}
       <Navbar />
       <BodyContainer>
-        <ButtonRow id="markets">
+        <ButtonRow id="markets" >
+          
+          <div style={marketStyles.tabButtonContainer}> 
           <TogButton
-            style={{
-              borderTopLeftRadius: '20px',
-              borderBottomLeftRadius: '20px',
-              textAlign: 'center',
-              backgroundColor: activeToggle == 'all' ? '#343a40' : '',
-            }}
+              style={{ ...marketStyles.tabButton1, backgroundColor: activeToggle == 'all' ? '#E73B22' : 'transparent', }}
             onClick={() => setActiveToggle('all')}
           >
             All Markets
           </TogButton>
           <TogButton
-            style={{
-              textAlign: 'center',
-              padding: '10px',
-              width: '160px',
-              backgroundColor: activeToggle == 'myMarkets' ? '#343a40' : '',
-            }}
+              style={{...marketStyles.tabButton2, backgroundColor: activeToggle == 'myMarkets' ? '#E73B22' : 'transparent', }}
             onClick={() => setActiveToggle('myMarkets')}
           >
             My Markets
           </TogButton>
           <TogButton
-            style={{
-              borderTopRightRadius: '20px',
-              borderBottomRightRadius: '20px',
-              textAlign: 'center',
-              backgroundColor: activeToggle == 'closed' ? '#343a40' : '',
-            }}
+              style={{ ...marketStyles.tabButton3, backgroundColor: activeToggle == 'closed' ? '#E73B22' : 'transparent' }}
             onClick={() => setActiveToggle('closed')}
           >
             Resolved Markets
           </TogButton>
+          </div>
         </ButtonRow>
         {id === supportedNetworkId ? (
           returnMarkets()
@@ -130,13 +118,19 @@ export default Markets
 const ButtonRow = styled.div`
   display: flex;
   padding-top: 25px;
-  justify-content: center;
+  justify-content: flex-end;
+  position: relative;
+  z-index:10;
+  @media(max-width: 768px) {
+    justify-content: center;
+  }
+
 `
 export const TogButton = styled.button`
   border: none;
   margin: 0;
   text-decoration: none;
-  color: antiquewhite;
+  color: white;
   cursor: pointer;
   text-align: center;
   transition: background 250ms ease-in-out, transform 150ms ease;
@@ -157,5 +151,18 @@ export const TogButton = styled.button`
   //border-style: solid;
   //font-family: Nunito;
   //font-weight: bold;
-  font-size: 18px;
+  font-size: 15px;
+  color: "#ffffff";
+
+  @media(max-width: 768px) {
+    font-size: 12px;
+    padding: 6px 20px;
+  }
+
+  @media(max-width: 375px) {
+    font-size: 10px;
+    padding: 6px 5px;
+  }
+
 `
+
