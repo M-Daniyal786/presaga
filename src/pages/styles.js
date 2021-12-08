@@ -1,6 +1,6 @@
 
 // Market Container Styles
-export const marketStyles = {
+const marketStyles = {
   imageContainer: {
     backgroundImage: `url("dark-background-lunar.jpeg")`, backgroundPosition: 'center', backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat', height: "100vh"
@@ -43,4 +43,6 @@ export const marketStyles = {
 
 }
 
+
+export default marketStyles
 

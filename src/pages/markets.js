@@ -20,7 +20,7 @@ import Web3 from 'web3'
 
 import { ToggleButton } from '../components/shared/Buttons'
 import { RPC_URL, supportedNetworkId } from '../config/network'
-import { marketStyles} from './styles'
+import marketStyles from './styles'
 
 const Markets = () => {
   const [markets, setMarkets] = useState([])
