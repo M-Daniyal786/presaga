@@ -2,6 +2,11 @@ import React from 'react'
 import rocket from '../../public/rocket.png'
 import dollar from '../../public/dollar.png'
 import Image from 'next/image'
+import { AiOutlineTwitter } from 'react-icons/ai'
+import { GrReddit } from 'react-icons/gr'
+import { FaTelegramPlane } from 'react-icons/fa'
+import { LinkButton } from './shared/Buttons'
+import { SiMedium, SiDiscord } from 'react-icons/si'
 
 const CallToAction = () => {
   return (
@@ -10,7 +15,14 @@ const CallToAction = () => {
         <div id="btnSet">
           <div id="btnLaunchDiv">
             <Image id="imgSet" src={rocket} alt="" />
-            <button id="btnLaunch">Launch App</button>
+            <button
+              onClick={() => {
+                location.href = 'markets'
+              }}
+              id="btnLaunch"
+            >
+              Launch App
+            </button>
           </div>
 
           <div id="btnSetUnitDiv">
@@ -24,6 +36,30 @@ const CallToAction = () => {
             PreSaga allows users to capitalize on their understanding of global
             events
           </span>
+
+          <ul id="iconsUl">
+            <li>
+              <a className="font-weight-bold footerItem icon" href="#">
+                <GrReddit />
+              </a>
+            </li>
+            <li className="ms-3">
+              <a className="font-weight-bold footerItem icon" href="#">
+                <FaTelegramPlane />
+              </a>
+            </li>
+
+            <li className="ms-3">
+              <a className="font-weight-bold footerItem icon" href="#">
+                <AiOutlineTwitter />
+              </a>
+            </li>
+            <li className="ms-3">
+              <a className="font-weight-bold footerItem icon" href="#">
+                <SiDiscord />
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </>

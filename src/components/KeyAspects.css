@@ -1,16 +1,131 @@
-.keyAspectsIcons{
-    color: #d85439;
-    font-size: 33px;
-    text-align: center;
+.keyAspectsIcons {
+  color: #d85439;
+  font-size: 33px;
+  text-align: center;
 }
 
 .keyAspectsIcons:hover {
-    color: antiquewhite;
+  color: antiquewhite;
 }
 
-.keyAspectsText h3{
-    color: antiquewhite;
-    text-align: center;
-    padding-top: 15px;
-    font-size: 21px;
+.keyAspectsText h3 {
+  color: antiquewhite;
+  text-align: center;
+  padding-top: 15px;
+  font-size: 21px;
+}
+
+#keyAspectHeading {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#keyAspectSpan {
+  color: white;
+  font-size: 40px;
+}
+
+#btnStartDiv div {
+  overflow: inherit !important;
+}
+
+#btnStartDiv {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #e73b22;
+  border-radius: 25px;
+  color: white;
+  width: 350px;
+  height: 60px;
+  border-color: tomato;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#btnStart {
+  background: transparent;
+  border: none;
+  color: white;
+  font-weight: 500;
+  font-size: 22px !important;
+}
+
+div#btnStartDiv button#btnStart {
+  transition: 0.5s;
+  transform: translateX(0px);
+}
+div#btnStartDiv:hover button#btnStart {
+  transition: 0.5s;
+  transform: translateX(-70px);
+}
+div#btnStartDiv:hover img {
+  transition: 0.5s;
+  transform: translateX(200px);
+}
+div#btnStartDiv img {
+  transition: 0.5s;
+  transform: translateX(0px);
+}
+
+#divSetAspectKey {
+  margin-top: 120px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  /* align-items: center; */
+}
+
+#contentDiv {
+  display: flex;
+  align-items: center;
+
+  flex-direction: column;
+  width: 300px;
+}
+
+#setAspectinnerheading {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#btnBuy {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #e73b22;
+  border-radius: 25px;
+  color: white;
+  font-size: 24px;
+  width: 250px;
+  height: 60px;
+  border-color: #e73b22;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#sliderHeading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.alice-carousel__dots {
+  display: none !important;
+}
+.alice-carousel__next-btn-item {
+  display: none !important;
+}
+.alice-carousel__prev-btn-wrapper {
+  display: none !important;
 }

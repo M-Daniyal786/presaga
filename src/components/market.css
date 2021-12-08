@@ -1,3 +1,13 @@
+@font-face {
+  src: url(../fonts/Raleway-Regular.ttf);
+  font-family: Raleway;
+}
+
+@font-face {
+  src: url(../fonts/Poppins-Regular.ttf);
+  font-family: Poppins;
+}
+
 .marketsIdTexte {
   border-left: 2px bold antiquewhite;
 }

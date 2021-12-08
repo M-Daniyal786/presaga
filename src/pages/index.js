@@ -53,13 +53,13 @@ const Home = () => {
   return (
     <>
       <CallToAction />
-
+      <WaysToEarn />
       <BodyContainer>
-        <WaysToEarn />
+        {/* <WaysToEarn /> */}
         <KeyAspects />
       </BodyContainer>
 
-      <Footer/>
+      <Footer />
     </>
   )
 }

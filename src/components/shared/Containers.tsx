@@ -1,13 +1,14 @@
 import styled from 'styled-components'
 
 export const BodyContainer = styled.div`
+  background: #00162c;
   // margin: auto;
   // max-width: 1440px;
-   padding-left: 10%;
-   padding-right: 10%;
-   padding-top: 2%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 2%;
 
-  height= 100%;
+  height: 100%;
 
   @media (max-width: 768px) {
     padding-left: 5%;

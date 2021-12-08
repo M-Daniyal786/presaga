@@ -3,6 +3,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 350px;
+  flex-direction: column;
+}
+
+#iconsUl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding-inline-start: 0px !important;
 }
 
 #headingSpan {
@@ -10,10 +20,10 @@
   font-family: 'Poppins';
   font-size: 29px;
   text-align: center;
-  width: 40%;
+  width: 50%;
   margin-top: 20px;
-  border-top: 1px solid white;
-  padding: 50px;
+  border-top: 0.5px solid white;
+  padding: 50px 50px 30px 50px;
 }
 
 #imgBorder {
@@ -23,7 +33,7 @@
 
 #mainDiv {
   background: url(../../public/hero.png);
-  height: 120vh;
+  height: 110vh;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -35,6 +45,92 @@
   flex-direction: column;
 }
 
+@media only screen and (max-width: 1440px) {
+  #mainDiv {
+    height: 100vh;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  #mainDiv {
+    height: 70vh;
+  }
+  #headingMain {
+    margin-top: 260px;
+  }
+  #headingSpan {
+    margin-top: 0px;
+    padding: 20px 20px 10px 20px;
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #mainDiv {
+    height: 50vh;
+  }
+  #headingMain {
+    margin-top: 225px;
+  }
+  #headingSpan {
+    font-size: 18px;
+    margin-top: 0px;
+    padding: 2px 25px 5px 25px;
+    width: 80%;
+  }
+  #btnSet {
+    margin-top: 25px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  #mainDiv {
+    background-position: -100px 15px;
+    max-width: 100%;
+    height: auto;
+  }
+  #headingMain {
+    margin-top: 110px;
+  }
+  #headingSpan {
+    font-size: 13px;
+    margin-top: 0px;
+    padding: 2px 15px 2px 15px;
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 375px) {
+  #mainDiv {
+    background-position: -130px 15px;
+    max-width: 100%;
+    height: auto;
+  }
+  #headingMain {
+    margin-top: 110px;
+  }
+  #headingSpan {
+    font-size: 13px;
+    margin-top: 0px;
+    padding: 2px 15px 2px 15px;
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  #mainDiv {
+    background-position: -160px 15px;
+    max-width: 100%;
+    height: auto;
+  }
+  #headingMain {
+    margin-top: 110px;
+  }
+  #headingSpan {
+    font-size: 13px;
+    margin-top: 0px;
+    padding: 2px 15px 2px 15px;
+    width: 90%;
+  }
+}
 #btnSet {
   display: flex;
   justify-content: center;
