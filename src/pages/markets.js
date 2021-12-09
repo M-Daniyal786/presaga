@@ -111,7 +111,7 @@ const Markets = () => {
     }
   }
 
-  
+  //n
 
   return (
     <div style={marketStyles.imageContainer}>
