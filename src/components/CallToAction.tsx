@@ -11,8 +11,7 @@ import { SiMedium, SiDiscord } from 'react-icons/si'
 
 const CallToAction = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
-  const abc = window.innerWidth
-  console.log(abc, '====>')
+  
   return (
     <>
       <div id="mainDiv">
