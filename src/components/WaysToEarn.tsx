@@ -5,14 +5,8 @@ import { ComponentContainer } from './shared/Containers'
 import Elipse from './shared/Elipse'
 import { H2, H3 } from './shared/Text'
 import ScrollContainer from 'react-indiana-drag-scroll'
-import useDraggableScroll from 'use-draggable-scroll'
 
 const WaysToEarn = () => {
-  const divRef = useRef(null)
-  const { onMouseDown } = useDraggableScroll(divRef, {
-    direction: 'horizontal',
-  })
-
   return (
     <div style={{ width: '100%' }}>
       <div id="setMainBody">
@@ -26,21 +20,9 @@ const WaysToEarn = () => {
           </div>
         </div>
 
-        <div
-          className="scroll-container"
-          ref={divRef}
-          onMouseDown={onMouseDown}
-        >
+        <div className="scroll-container">
           <div className="gridscroll">
-            <img
-              className="Img"
-              src="workflow.png"
-              // class="d-block mx-lg-auto img-fluid"
-              // alt="Bootstrap Themes"
-              // width={'100%'}
-              // height={'100%'}
-              loading="lazy"
-            />
+            <img className="ImgWorkFlow" src="workflow.png" loading="lazy" />
           </div>
         </div>
       </div>

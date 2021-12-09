@@ -1,3 +1,16 @@
+#MainHeadingAspectKey {
+  background: #001325;
+  background-image: url('../../public/nervo.png');
+  background-size: auto;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding-left: 15%;
+  padding-right: 15%;
+  /* margin-top: 50px; */
+  padding-top: 10%;
+}
+
 .keyAspectsIcons {
   color: #d85439;
   font-size: 33px;
@@ -128,4 +141,119 @@ div#btnStartDiv img {
 }
 .alice-carousel__prev-btn-wrapper {
   display: none !important;
+}
+
+#sliderHeadingSpann {
+  font-size: 60px;
+  color: white;
+}
+
+#couresolSlider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+}
+#couresolSliderImg {
+  width: 25%;
+}
+#couresolSliderDiv {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+#couresolSliderSpan {
+  font-size: 60px;
+  color: white;
+}
+
+#couresolSliderContent {
+  font-size: 26px;
+  color: white;
+}
+
+#KeyAspectMainSliderDiv {
+  margin-top: 100px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  #couresolSliderImg {
+    width: 35%;
+  }
+  #couresolSliderSpan {
+    font-size: 45px;
+  }
+  #couresolSliderContent {
+    font-size: 20px;
+  }
+  #sliderHeadingSpann {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #keyAspectHeading {
+    justify-content: center;
+  }
+  #couresolSliderImg {
+    width: 38%;
+  }
+}
+
+@media only screen and (max-width: 428px) and (min-width: 280px) {
+  #MainHeadingAspectKey {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  #keyAspectHeading {
+    justify-content: center;
+    align-items: center;
+  }
+  #btnStart {
+    font-size: 17px !important;
+  }
+  #divSetAspectKey {
+    margin-top: 80px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+  }
+  #sliderHeading {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  #sliderHeadingSpann {
+    font-size: 38px;
+  }
+  #couresolSliderImg {
+    width: 65%;
+  }
+  #couresolSlider {
+    flex-direction: column;
+    gap: 20px;
+  }
+  #couresolSliderDiv {
+    width: 100%;
+    gap: 10px;
+    align-items: center;
+  }
+  #couresolSliderSpan {
+    font-size: 41px !important;
+  }
+  #couresolSliderContent {
+    font-size: 20px;
+    text-align: center;
+  }
+  #btnBuy {
+    width: 210px;
+  }
+  #KeyAspectMainSliderDiv {
+    margin-top: 30px;
+  }
 }

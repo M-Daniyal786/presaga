@@ -54,10 +54,8 @@ const Home = () => {
     <>
       <CallToAction />
       <WaysToEarn />
-      <BodyContainer>
-        {/* <WaysToEarn /> */}
-        <KeyAspects />
-      </BodyContainer>
+      <KeyAspects />
+      {/* <BodyContainer></BodyContainer> */}
 
       <Footer />
     </>

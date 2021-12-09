@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import rocket from '../../public/rocket.png'
 import dollar from '../../public/dollar.png'
 import Image from 'next/image'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { AiOutlineTwitter } from 'react-icons/ai'
 import { GrReddit } from 'react-icons/gr'
 import { FaTelegramPlane } from 'react-icons/fa'
@@ -9,6 +10,9 @@ import { LinkButton } from './shared/Buttons'
 import { SiMedium, SiDiscord } from 'react-icons/si'
 
 const CallToAction = () => {
+  const [navbarOpen, setNavbarOpen] = useState(false)
+  const abc = window.innerWidth
+  console.log(abc, '====>')
   return (
     <>
       <div id="mainDiv">

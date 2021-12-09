@@ -12,33 +12,16 @@ import { IoMdArrowRoundForward } from 'react-icons/io'
 const KeyAspects = () => {
   const carouselRef = useRef(null)
   const items = [
-    <div
-      style={{
-        width: '100%',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '80px',
-      }}
-    >
-      <img style={{ width: '25%' }} src="coin-01.png" />
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          width: '50%',
-        }}
-      >
-        <span
-          style={{ fontSize: '60px', fontFamily: 'Raleway', color: 'white' }}
-        >
+    <div id="couresolSlider">
+      <img id="couresolSliderImg" src="coin-01.png" />
+      <div id="couresolSliderDiv">
+        <span id="couresolSliderSpan" style={{ fontFamily: 'Raleway' }}>
           Token Name
         </span>
         <span
+          id="couresolSliderContent"
           style={{
-            fontSize: '26px',
             fontFamily: 'Poppins',
-            color: 'white',
           }}
         >
           Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -52,33 +35,16 @@ const KeyAspects = () => {
         </button>
       </div>
     </div>,
-    <div
-      style={{
-        width: '100%',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '80px',
-      }}
-    >
-      <img style={{ width: '25%' }} src="coin-02.png" />
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          width: '50%',
-        }}
-      >
-        <span
-          style={{ fontSize: '60px', fontFamily: 'Raleway', color: 'white' }}
-        >
+    <div id="couresolSlider">
+      <img id="couresolSliderImg" src="coin-02.png" />
+      <div id="couresolSliderDiv">
+        <span id="couresolSliderSpan" style={{ fontFamily: 'Raleway' }}>
           Token Name
         </span>
         <span
+          id="couresolSliderContent"
           style={{
-            fontSize: '26px',
             fontFamily: 'Poppins',
-            color: 'white',
           }}
         >
           Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -92,46 +58,29 @@ const KeyAspects = () => {
         </button>
       </div>
     </div>,
-    <div
-    style={{
-      width: '100%',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: '80px',
-    }}
-  >
-    <img style={{ width: '25%' }} src="coin-03.png" />
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        width: '50%',
-      }}
-    >
-      <span
-        style={{ fontSize: '60px', fontFamily: 'Raleway', color: 'white' }}
-      >
-        Token Name
-      </span>
-      <span
-        style={{
-          fontSize: '26px',
-          fontFamily: 'Poppins',
-          color: 'white',
-        }}
-      >
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry lorem Ipsum has been the industry's standard dummy.
-      </span>
-      <button
-        style={{ marginTop: '20px', fontFamily: 'Poppins' }}
-        id="btnBuy"
-      >
-        Buy Now
-      </button>
-    </div>
-  </div>
+    <div id="couresolSlider">
+      <img id="couresolSliderImg" src="coin-03.png" />
+      <div id="couresolSliderDiv">
+        <span id="couresolSliderSpan" style={{ fontFamily: 'Raleway' }}>
+          Token Name
+        </span>
+        <span
+          id="couresolSliderContent"
+          style={{
+            fontFamily: 'Poppins',
+          }}
+        >
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry lorem Ipsum has been the industry's standard dummy.
+        </span>
+        <button
+          style={{ marginTop: '20px', fontFamily: 'Poppins' }}
+          id="btnBuy"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>,
   ]
 
   const playNext = () => {
@@ -145,7 +94,7 @@ const KeyAspects = () => {
   }
   // console.log(carouselRef.current.slideNext)
   return (
-    <ComponentContainer>
+    <div id="MainHeadingAspectKey">
       <div style={{ width: '100%' }}>
         <div id="keyAspectHeading">
           <span style={{ fontFamily: 'Raleway' }} id="keyAspectSpan">
@@ -190,9 +139,7 @@ const KeyAspects = () => {
         </div>
 
         <div id="sliderHeading">
-          <span
-            style={{ fontFamily: 'Raleway', fontSize: '60px', color: 'white' }}
-          >
+          <span id="sliderHeadingSpann" style={{ fontFamily: 'Raleway' }}>
             Buy Our Token
           </span>
 
@@ -210,7 +157,7 @@ const KeyAspects = () => {
           </div>
         </div>
 
-        <div style={{ marginTop: '100px', width: '100%' }}>
+        <div id="KeyAspectMainSliderDiv">
           <AliceCarousel
             ref={carouselRef}
             mouseTracking
@@ -220,7 +167,7 @@ const KeyAspects = () => {
           />
         </div>
       </div>
-    </ComponentContainer>
+    </div>
   )
 }
 
