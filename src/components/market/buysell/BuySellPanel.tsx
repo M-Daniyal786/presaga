@@ -34,7 +34,7 @@ const BuySellPanel = (props) => {
             {BUY}
           </H3_NoScale>
         </Tab>
-        <Tab
+        <TabBodered
           selected={selectedTab == SELL}
           onClick={() => setSelectedTab(SELL)}
           borderRadius="0px 25px 0px 0px"
@@ -45,7 +45,7 @@ const BuySellPanel = (props) => {
           >
             {SELL}
           </H3_NoScale>
-        </Tab>
+        </TabBodered>
       </Tabs>
 
       <ContentContainer>
@@ -88,10 +88,11 @@ const BuySellPanel = (props) => {
 
 export default BuySellPanel
 const PanelContainer = styled.div`
-  background: #212d38;
+  background: rgba(255,255,255,.2);
   box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.15);
-  border-radius: 25px;
-  width: 500px;
+  border-radius: 50px;
+  width: 100%;
+  margin-bottom: 100px;
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -99,6 +100,10 @@ const PanelContainer = styled.div`
 
 const Tabs = styled.div`
   display: flex;
+  /* background-color: red; */
+  max-width:30%;
+  margin-top: 20px;
+  
 `
 
 const Tab = styled.div`
@@ -108,8 +113,10 @@ const Tab = styled.div`
   justify-content: center;
   //height: 128px;
   padding: 10px;
+  /* border-border-top-left-radius:50; */
   //border-radius: ${(props) => props.borderRadius || ''};
-  background: ${(props) => (props.selected ? '#293847' : '#212D38')};
+  /* background: ${(props) => (props.selected ? '#293847' : 'rgb(255,255,255,.2)')}; */
+  /* border-left: 1px solid white; */
   // border-bottom: ${(props) => (props.selected ? '#D85439 solid 4px;' : '')};
   cursor: pointer;
 
@@ -117,6 +124,26 @@ const Tab = styled.div`
     filter: ${(props) => (!props.selected ? 'brightness(1.15)' : '')};
   }
 `
+const TabBodered = styled.div`
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  //height: 128px;
+  padding: 10px;
+  /* border-border-top-left-radius:50; */
+  //border-radius: ${(props) => props.borderRadius || ''};
+  /* background: ${(props) => (props.selected ? '#293847' : 'rgb(255,255,255,.2)')}; */
+  border-left: 1px solid white;
+  // border-bottom: ${(props) => (props.selected ? '#D85439 solid 4px;' : '')};
+  cursor: pointer;
+
+  &:hover {
+    filter: ${(props) => (!props.selected ? 'brightness(1.15)' : '')};
+  }
+`
+
+
 const ContentContainer = styled.div`
   padding-top: 55px;
   padding-left: 25px;
@@ -143,10 +170,10 @@ const Share = styled.div`
   align-items: center;
   justify-content: space-between;
   //min-height: 55px;
-  background: ${(props) => (props.selected ? props.selectedColor : '#344351')};
+  background: ${(props) => (props.selected ? props.selectedColor : 'rgba(255,255,255,.3)')};
   padding: 8px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 50px;
 
   &:hover {
     background: ${(props) => (!props.selected ? props.selectedColor : '')};

@@ -54,11 +54,11 @@ const RemovePanel = (props) => {
         <FlexText>
           <BoldStyled
             fontSize="20px"
-            color="#D85439"
+            color="#FFFFFF"
             style={{ marginBottom: '30px' }}
           >
             <H4_NoScale fontSize="18px">Your Liquidity</H4_NoScale>
-            <BoldStyled fontSize="18px" color="#D85439">
+            <BoldStyled fontSize="18px" color="#FFFFFF">
               {market.accountLiquidity} UNT
             </BoldStyled>
             {market.resolved ? (

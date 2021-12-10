@@ -71,23 +71,28 @@ div#btnLaunchDiv button#btnLaunch {
   transition: 0.5s;
   transform: translateX(0px);
 }
+
 div#btnLaunchDiv:hover button#btnLaunch {
   transition: 0.5s;
   transform: translateX(-60px);
 }
+
 div#btnLaunchDiv:hover img {
   transition: 0.5s;
   transform: translateX(160px);
 }
+
 div#btnLaunchDiv img {
   transition: 0.5s;
   transform: translateX(0px);
 }
+
 #imgSet {
   /* position: relative !important; */
   height: auto !important;
   width: 30px !important;
 }
+
 #btnLaunchDiv div {
   overflow: inherit !important;
 }
@@ -123,6 +128,7 @@ div#btnLaunchDiv img {
   padding-right: 50px;
 }
 
+
 #imgSetUnit {
   /* position: relative !important; */
   height: auto !important;
@@ -137,31 +143,94 @@ div#btnSetUnitDiv button#btnBuyUnit {
   transition: 0.5s;
   transform: translateX(0px);
 }
+
 div#btnSetUnitDiv:hover button#btnBuyUnit {
   transition: 0.5s;
   transform: translateX(-60px);
 }
+
 div#btnSetUnitDiv:hover img {
   transition: 0.5s;
   transform: translateX(160px);
 }
+
 div#btnSetUnitDiv img {
   transition: 0.5s;
   transform: translateX(0px);
 }
+
+/* changed button */
+
+#btnBuyUnit2 {
+  background: transparent;
+  border: none;
+  color: #e73b22;
+  font-weight: 600;
+  font-size: 22px !important;
+}
+
+#btnSetUnitDiv2 {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: white;
+  border-radius: 25px;
+  color: #e73b22;
+  width: 300px;
+  height: 40px;
+  border-color: tomato;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+
+#imgSetUnit2 {
+  /* position: relative !important; */
+  height: auto !important;
+  width: 30px !important;
+}
+
+#btnSetUnitDiv2 div {
+  overflow: inherit !important;
+}
+
+div#btnSetUnitDiv2 button#btnBuyUnit2 {
+  transition: 0.5s;
+  transform: translateX(0px);
+}
+
+div#btnSetUnitDiv2:hover button#btnBuyUnit2 {
+  transition: 0.5s;
+  transform: translateX(-60px);
+}
+
+div#btnSetUnitDiv2:hover img {
+  transition: 0.5s;
+  transform: translateX(160px);
+}
+
+div#btnSetUnitDiv2 img {
+  transition: 0.5s;
+  transform: translateX(0px);
+}
+
 
 @media screen and (max-width: 2560px) and (min-width: 1920px) {
   #headingMain {
     margin-top: 600px;
     padding-bottom: 50px;
   }
+
   #headingSpan {
     font-size: 39px;
     padding: 30px 50px 20px 50px;
   }
+
   #btnSet {
     margin-top: 250px;
   }
+
   .icon {
     font-size: 50px;
   }
@@ -172,13 +241,16 @@ div#btnSetUnitDiv img {
     margin-top: 400px;
     padding-bottom: 50px;
   }
+
   #headingSpan {
     font-size: 29px;
     padding: 30px 50px 20px 50px;
   }
+
   #btnSet {
     margin-top: 250px;
   }
+
   .icon {
     font-size: 30px;
   }
@@ -189,10 +261,12 @@ div#btnSetUnitDiv img {
     margin-top: 300px;
     padding-bottom: 50px;
   }
+
   #headingSpan {
     font-size: 39px;
     padding: 30px 50px 20px 50px;
   }
+
   #btnSet {
     margin-top: 250px;
   }
@@ -203,10 +277,12 @@ div#btnSetUnitDiv img {
     margin-top: 350px;
     padding-bottom: 50px;
   }
+
   #headingSpan {
     font-size: 29px;
     padding: 30px 50px 20px 50px;
   }
+
   #btnSet {
     margin-top: 100px;
   }
@@ -217,10 +293,12 @@ div#btnSetUnitDiv img {
     margin-top: 200px;
     padding-bottom: 20px;
   }
+
   #headingSpan {
     font-size: 22px;
     padding: 25px 50px 30px 50px;
   }
+
   #btnSet {
     margin-top: 100px;
   }
@@ -231,17 +309,21 @@ div#btnSetUnitDiv img {
     margin-top: 150px;
     padding-bottom: 0px;
   }
+
   #headingSpan {
     font-size: 18px;
     padding: 10px 40px 10px 40px;
     width: 56%;
   }
+
   #btnSet {
     margin-top: 73px;
   }
+
   #btnLaunch {
     font-size: 15px !important;
   }
+
   #btnLaunchDiv {
     height: 45px;
     width: 225px;
@@ -251,6 +333,7 @@ div#btnSetUnitDiv img {
     transition: 0.5s;
     transform: translateX(-40px);
   }
+
   div#btnLaunchDiv:hover img {
     transition: 0.5s;
     transform: translateX(120px);
@@ -269,10 +352,33 @@ div#btnSetUnitDiv img {
     transition: 0.5s;
     transform: translateX(-40px);
   }
+
   div#btnSetUnitDiv:hover img {
     transition: 0.5s;
     transform: translateX(110px);
   }
+
+  /* bbb */
+  #btnBuyUnit2 {
+    font-size: 15px !important;
+  }
+
+  #btnSetUnitDiv2 {
+    height: 45px;
+    width: 225px;
+  }
+
+  div#btnSetUnitDiv2:hover button#btnBuyUnit2 {
+    transition: 0.5s;
+    transform: translateX(-40px);
+  }
+
+  div#btnSetUnitDiv2:hover img {
+    transition: 0.5s;
+    transform: translateX(110px);
+  }
+
+
 }
 
 @media screen and (max-width: 428px) and (min-width: 375px) {
@@ -280,21 +386,26 @@ div#btnSetUnitDiv img {
     background: url(../../public/mobile-banner.jpg);
     background-size: cover;
   }
+
   #headingMain {
     margin-top: 152px;
     padding-bottom: 30px;
   }
+
   #headingSpan {
     font-size: 18px;
     padding: 10px 20px 10px 20px;
     width: 80%;
   }
+
   #btnSet {
     margin-top: 50px;
   }
+
   #btnLaunch {
     font-size: 15px !important;
   }
+
   #btnLaunchDiv {
     height: 45px;
     width: 225px;
@@ -304,6 +415,7 @@ div#btnSetUnitDiv img {
     transition: 0.5s;
     transform: translateX(-40px);
   }
+
   div#btnLaunchDiv:hover img {
     transition: 0.5s;
     transform: translateX(120px);
@@ -322,10 +434,33 @@ div#btnSetUnitDiv img {
     transition: 0.5s;
     transform: translateX(-40px);
   }
+
   div#btnSetUnitDiv:hover img {
     transition: 0.5s;
     transform: translateX(110px);
   }
+
+  /* ssss */
+
+  #btnBuyUnit2 {
+    font-size: 15px !important;
+  }
+
+  #btnSetUnitDiv2 {
+    height: 45px;
+    width: 225px;
+  }
+
+  div#btnSetUnitDiv2:hover button#btnBuyUnit2 {
+    transition: 0.5s;
+    transform: translateX(-40px);
+  }
+
+  div#btnSetUnitDiv2:hover img {
+    transition: 0.5s;
+    transform: translateX(110px);
+  }
+
 }
 
 @media screen and (max-width: 375px) and (min-width: 320px) {
@@ -333,21 +468,26 @@ div#btnSetUnitDiv img {
     background: url(../../public/mobile-banner.jpg);
     background-size: cover;
   }
+
   #headingMain {
     margin-top: 120px;
     padding-bottom: 30px;
   }
+
   #headingSpan {
     font-size: 18px;
     padding: 10px 10px 10px 10px;
     width: 90%;
   }
+
   #btnSet {
     margin-top: 50px;
   }
+
   #btnLaunch {
     font-size: 15px !important;
   }
+
   #btnLaunchDiv {
     height: 45px;
     width: 225px;
@@ -357,6 +497,7 @@ div#btnSetUnitDiv img {
     transition: 0.5s;
     transform: translateX(-40px);
   }
+
   div#btnLaunchDiv:hover img {
     transition: 0.5s;
     transform: translateX(120px);
@@ -375,7 +516,27 @@ div#btnSetUnitDiv img {
     transition: 0.5s;
     transform: translateX(-40px);
   }
+
   div#btnSetUnitDiv:hover img {
+    transition: 0.5s;
+    transform: translateX(110px);
+  }
+
+  #btnBuyUnit2 {
+    font-size: 15px !important;
+  }
+
+  #btnSetUnitDiv2 {
+    height: 45px;
+    width: 225px;
+  }
+
+  div#btnSetUnitDiv2:hover button#btnBuyUnit2 {
+    transition: 0.5s;
+    transform: translateX(-40px);
+  }
+
+  div#btnSetUnitDiv2:hover img {
     transition: 0.5s;
     transform: translateX(110px);
   }
@@ -386,21 +547,26 @@ div#btnSetUnitDiv img {
     background: url(../../public/mobile-banner.jpg);
     background-size: cover;
   }
+
   #headingMain {
     margin-top: 100px;
     padding-bottom: 20px;
   }
+
   #headingSpan {
     font-size: 18px;
     padding: 10px 10px 10px 10px;
     width: 90%;
   }
+
   #btnSet {
     margin-top: 40px;
   }
+
   #btnLaunch {
     font-size: 15px !important;
   }
+
   #btnLaunchDiv {
     height: 45px;
     width: 225px;
@@ -410,6 +576,7 @@ div#btnSetUnitDiv img {
     transition: 0.5s;
     transform: translateX(-40px);
   }
+
   div#btnLaunchDiv:hover img {
     transition: 0.5s;
     transform: translateX(120px);
@@ -428,6 +595,7 @@ div#btnSetUnitDiv img {
     transition: 0.5s;
     transform: translateX(-40px);
   }
+
   div#btnSetUnitDiv:hover img {
     transition: 0.5s;
     transform: translateX(110px);

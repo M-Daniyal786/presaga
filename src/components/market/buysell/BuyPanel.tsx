@@ -15,6 +15,10 @@ import { Buy } from '../../../services/trade'
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer, toast } from 'react-toastify'
 
+import Image from 'next/image'
+
+import dollar from '../../../../public/dollar.png'
+
 let web3: any
 if (typeof window !== 'undefined' && window.ethereum) {
   // eslint-disable-next-line global-require
@@ -120,7 +124,7 @@ const BuyPanel = (props: any) => {
       <H4_NoScale fontSize="18px">
         <span
           style={{
-            color: howMuch == 'Not enough balance' ? '#d85439' : 'antiquewhite',
+            color: howMuch == 'Not enough balance' ? '#d85439' : '#ffffff',
           }}
         >
           {howMuch}
@@ -145,14 +149,21 @@ const BuyPanel = (props: any) => {
         </RightText>
       </EstimatedShares>
       <SubmitContainer>
-        <Button
+        {/* <Button
           onClick={async () => {
             await handleBuy()
           }}
           //disabled={amount ? false : true}
         >
           Buy
-        </Button>
+        </Button> */}
+      
+         <div id="btnSetUnitDiv2">
+            <Image id="imgSetUnit2" src={dollar} alt="" />
+            <button id="btnBuyUnit2" onClick={async () => {
+            await handleBuy()
+          }}>Buy UNT</button>
+          </div>
       </SubmitContainer>
     </BuyPanelContainer>
   )
@@ -193,12 +204,45 @@ const RightText = styled(H4_NoScale)`
   }
 `
 
-const InputStyled = styled(Input)`
+ const UNTInput = styled.input`
+  background: rgba(255,255,255,.3);
+  border: 0px solid #d85439;
+  //box-sizing: border-box;
+  border-radius: 50px;
+  font-size: 18px;
+padding:10px;
+  //min-width: 442px;
+  color: #ffffff;
+  //height: 55px;
+  @media (max-width: 768px) {
+    min-width: 100%;
+  }
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /*
+    padding-left: 10px;
+    margin-right: 67px;
+    display: block;
+    font-family: Nunito;
+    margin-bottom: 8px;
+    padding: 8px 20px;
+    width: 100%;
+    */
+`
+
+
+const InputStyled = styled(UNTInput)`
   margin-top: 15px;
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
 `
 const SubmitContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   padding-top: 70px;
   @media (max-width: 768px) {
     padding-top: 33px;

@@ -15,19 +15,19 @@ const InfoPanelShares = (props) => {
     <PanelContainer>
       <FlexRow>
         <div>
-          <H4Bold_NoScale color="#616F7C">Share</H4Bold_NoScale>
+          <H4Bold_NoScale color="#FFFFFF">Share</H4Bold_NoScale>
           <H4Bold_NoScale fontSize="15px">{type}</H4Bold_NoScale>
         </div>
       </FlexRow>
       <FlexRow>
         <div>
-          <H4Bold_NoScale color="#616F7C">Balance</H4Bold_NoScale>
+          <H4Bold_NoScale color="#FFFFFF">Balance</H4Bold_NoScale>
           <H4Bold_NoScale fontSize="15px">
             {formatNumber(formatBigNumber(shares))}
           </H4Bold_NoScale>
         </div>
         <div>
-          <H4Bold_NoScale color="#616F7C">Value(UNT)</H4Bold_NoScale>
+          <H4Bold_NoScale color="#FFFFFF">Value(UNT)</H4Bold_NoScale>
           <H4Bold_NoScale fontSize="15px">
             {formatNumber(price * formatBigNumber(shares))}
           </H4Bold_NoScale>
@@ -40,7 +40,7 @@ const InfoPanelShares = (props) => {
 export default InfoPanelShares
 
 const PanelContainer = styled.div`
-  background: #212d38;
+  background: rgba(255, 255, 255, .5);
   box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   padding: 20px;

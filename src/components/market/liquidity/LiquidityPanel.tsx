@@ -28,7 +28,7 @@ const LiquidityPanel = (props) => {
             {ADD}
           </H3_NoScale>
         </Tab>
-        <Tab
+        <TabBodered
           selected={selectedTab == REMOVE}
           onClick={() => setSelectedTab(REMOVE)}
           borderRadius="0px 25px 0px 0px"
@@ -39,7 +39,7 @@ const LiquidityPanel = (props) => {
           >
             {REMOVE}
           </H3_NoScale>
-        </Tab>
+        </TabBodered>
       </Tabs>
 
       {market.closed == true ? (
@@ -61,11 +61,11 @@ const LiquidityPanel = (props) => {
 
 export default LiquidityPanel
 const PanelContainer = styled.div`
-  background: #212d38;
+background: rgba(255,255,255,.2);
   box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.15);
-  border-radius: 15px;
-
-  width: 500px;
+  border-radius: 50px;
+  width: 100%;
+  margin-bottom: 100px;
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -73,6 +73,10 @@ const PanelContainer = styled.div`
 
 const Tabs = styled.div`
   display: flex;
+  /* background-color: red; */
+  max-width:30%;
+  margin-top: 20px;
+  
 `
 
 const Tab = styled.div`
@@ -80,17 +84,38 @@ const Tab = styled.div`
   flex: 1;
   align-items: center;
   justify-content: center;
-  padding: 10px;
   //height: 128px;
+  padding: 10px;
+  /* border-border-top-left-radius:50; */
   //border-radius: ${(props) => props.borderRadius || ''};
-  background: ${(props) => (props.selected ? '#293847' : '#212D38')};
-  //border-bottom: ${(props) => (props.selected ? '#D85439 solid 4px;' : '')};
+  /* background: ${(props) => (props.selected ? '#293847' : 'rgb(255,255,255,.2)')}; */
+  /* border-left: 1px solid white; */
+  // border-bottom: ${(props) => (props.selected ? '#D85439 solid 4px;' : '')};
   cursor: pointer;
 
   &:hover {
     filter: ${(props) => (!props.selected ? 'brightness(1.15)' : '')};
   }
 `
+const TabBodered = styled.div`
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  //height: 128px;
+  padding: 10px;
+  /* border-border-top-left-radius:50; */
+  //border-radius: ${(props) => props.borderRadius || ''};
+  /* background: ${(props) => (props.selected ? '#293847' : 'rgb(255,255,255,.2)')}; */
+  border-left: 1px solid white;
+  // border-bottom: ${(props) => (props.selected ? '#D85439 solid 4px;' : '')};
+  cursor: pointer;
+
+  &:hover {
+    filter: ${(props) => (!props.selected ? 'brightness(1.15)' : '')};
+  }
+`
+
 const ContentContainer = styled.div`
   padding-top: 55px;
   padding-left: 25px;

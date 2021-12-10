@@ -31,11 +31,58 @@ const marketStates = {
   OPEN: 'false',
 }
 
+const market_id_styles = {
+  imageContainer: {
+    backgroundImage: `url("/dark-background-lunar.jpeg")`, backgroundPosition: 'center', backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat', height: "100%"
+  },
+}
+
+const marketStyles = {
+  imageContainer: {
+    backgroundImage: `url("dark-background-lunar.jpeg")`, backgroundPosition: 'center', backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat', height: "100vh"
+  },
+  buttonRowContainer: {
+    justifyContent: "flex-end",
+    
+  },
+
+  tabButtonContainer: { display:"flex", background: "rgba(255, 255, 255, 0.2)", padding: "8px", paddingLeft:"10px",paddingRight:"10px", borderRadius:"40px", width:"40%" },
+  tabButton1: {
+  borderTopLeftRadius: '30px',
+  borderBottomLeftRadius: '30px',
+  borderTopRightRadius: '30px',
+  borderBottomRightRadius: '30px',
+    textAlign: 'center',
+    width:"50%"
+  
+  },
+  tabButton2:{
+    textAlign: 'center',
+    borderTopLeftRadius: '30px',
+    borderBottomLeftRadius: '30px',
+    borderTopRightRadius: '30px',
+    borderBottomRightRadius: '30px',marginLeft:"20px",
+    padding: '7px',
+    width:"50%"
+
+    
+  
+  },
+
+  
+
+}
+
 const Market = (props) => {
   const [market, setMarketState] = useState([])
   const [account, setAccount] = useState()
   const router = useRouter()
   const [add, setAdd] = useState()
+
+  const [activeToggle, setActiveToggle] = useState('Trade')
+
   const { id } = router.query
 
   const [isRefreshing, setIsRefreshing] = React.useState(false)
@@ -54,6 +101,7 @@ const Market = (props) => {
 
       try {
         await getMarket(web3, id)
+        setIsRefreshing(true)
       } catch (error) {
         setIsRefreshing(true)
       }
@@ -72,8 +120,43 @@ const Market = (props) => {
     setMarketState(market)
   }
 
+  const returnTabs = () => {
+    switch (activeToggle) {
+      case 'Trade':
+        return (
+          <BuySell>
+          {!market[0].closed && <BuySellPanel data={market[0]} />}
+          {market[0].closed == true && market[0].resolved == false ? (
+            <H3_NoScale style={{ padding: '50px' }}>
+              Trading was temporarily suspended...
+            </H3_NoScale>
+          ) : (
+            <></>
+          )}
+          {market[0].resolved == true && market[0].closed == true ? (
+            <ClosedPanel data={market[0]} />
+          ) : (
+            <></>
+          )}
+          {market[0].liquidity == marketStates.NO_LIQUIDITY && (
+            <NoLiquidityPanel />
+          )}
+        </BuySell>);
+
+      case 'Liquidity':
+        return (
+          <AddLiquidity>
+                  <LiquidityPanel data={market[0]} />
+                </AddLiquidity>
+        )
+
+      // case 'closed':
+      //   return <ResolvedAndClosedMarkets data={[]} />
+    }
+  }
+
   return (
-    <div >
+    <div style={market_id_styles.imageContainer}>
       <ToastContainer />
       <Navbar folder={"market"}/>
       {/*   {isRefreshing && (
@@ -95,8 +178,11 @@ const Market = (props) => {
                   <H3_NoScale fontSize="25px">
                     {market[0]?.question}{' '}
                   </H3_NoScale>
-                  <br />
-                  <InfoPanel1 data={market[0]} />
+                    <br />
+                    <FlexItemTransparent flex="80%" >
+                    <div style={{marginBottom:10}}> 
+                     <InfoPanel1 data={market[0]} />
+                    </div>
                
                 {/* <FlexItem flex="40%"> */}
            
@@ -118,6 +204,7 @@ const Market = (props) => {
                     )}
                   </InfoPanelSharesContainer>
                 {/* </FlexItem> */}
+                  </FlexItemTransparent>
                 </FlexItem>
               </FlexContainer>
 
@@ -136,9 +223,39 @@ const Market = (props) => {
                 </MarketsText>
               </Row>
             </Row>
-          </BodyContainer>
+            </BodyContainer>
+            
+            <BodyContainer >
+              <Row>
+                    
+                <FlexItem flex="100%">
+                <ButtonRow id="markets" >
+          
+          <div style={marketStyles.tabButtonContainer}> 
+          <TogButton
+              style={{ ...marketStyles.tabButton1, backgroundColor: activeToggle == 'Trade' ? '#E73B22' : 'transparent', }}
+            onClick={() => setActiveToggle('Trade')}
+          >
+            Trade
+           </TogButton>
+          <TogButton
+              style={{...marketStyles.tabButton2, backgroundColor: activeToggle == 'Liquidity' ? '#E73B22' : 'transparent', }}
+            onClick={() => setActiveToggle('Liquidity')}
+          >
+            Liquidity
+          </TogButton>
+        
+          </div>
+        </ButtonRow>
 
-          <div class="container navigation mt-2">
+                </FlexItem>
+              </Row>
+    <Row>
+                  {returnTabs()}
+</Row>
+            </BodyContainer>
+
+          {/* <div class="container navigation mt-2">
             <div class="sharesLiquidityToggle row"></div>
             <div class="row">
               <div class="row sharesLiquidityToggleLG">
@@ -159,7 +276,7 @@ const Market = (props) => {
                       <div class="four">
                         <h1>Liquidity </h1>
                       </div>
-                    </a>
+                    </a>  
                   </li>
                 </ul>
               </div>
@@ -191,9 +308,12 @@ const Market = (props) => {
                 </AddLiquidity>
               </div>
             </div>
-          </div>
+          </div> */}
 
-        </div>
+          
+          </div>
+          
+        
       ) : (
         !isRefreshing && (
           <div
@@ -223,7 +343,8 @@ const Market = (props) => {
         )
         )}
       </div>
-      <FooterFixed />
+      {isRefreshing ? (<FooterFixed />) : null}
+      
     </div>
   )
 }
@@ -300,13 +421,26 @@ const InfoPanelSharesContainer = styled.div`
   flex-direction: row;
   column-gap: 20px;
   row-gap: 20px;
+  @media (max-width: 768px){
+    flex-direction: column;
+  }
 `
 
 const FlexItem = styled.div`
   flex: ${(props) => props.flex || '50%'};
   column-gap: 20px;
   @media (max-width: 768px) {
-    flex: 100%;
+    flex: 50%;
+  }
+`
+
+const FlexItemTransparent = styled.div`
+  flex: ${(props) => props.flex || '50%'};
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgba(255,255,255,.2);
+  @media (max-width: 768px) {
+    flex: 50%;
   }
 `
 
@@ -317,3 +451,55 @@ const FlexWrappedItem = styled.div`
     flex: 100%;
   }
 `
+
+const ButtonRow = styled.div`
+  display: flex;
+  padding-top: 25px;
+  justify-content: flex-start;
+  position: relative;
+  z-index:10;
+  @media(max-width: 768px) {
+    justify-content: center;
+  }
+
+`
+export const TogButton = styled.button`
+  border: none;
+  margin: 0;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 6px 20px;
+  justify-content: center;
+
+  background: #d85439;
+  //box-shadow: 0px 2px 20px rgba(216, 84, 57, 0.7);
+  //border-radius: 25px;
+  //border-color: #d85439;
+  //border-width: 1px;
+  //border-style: solid;
+  //font-family: Nunito;
+  //font-weight: bold;
+  font-size: 15px;
+  color: "#ffffff";
+
+  @media(max-width: 768px) {
+    font-size: 12px;
+    padding: 6px 20px;
+  }
+
+  @media(max-width: 375px) {
+    font-size: 10px;
+    padding: 6px 5px;
+  }
+
+`
+

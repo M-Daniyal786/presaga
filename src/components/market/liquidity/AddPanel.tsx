@@ -10,6 +10,11 @@ import { ToastContainer, toast } from 'react-toastify'
 import { getAccount, getAccountBalanceUNT } from '../../../services/account'
 import { RPC_URL, networkExplorer } from '../../../config/network'
 import { widthDrawFees, getWithdrawableFees } from '../../../services/trade'
+
+import Image from 'next/image'
+
+import Ribbon from "../../../../public/ribbon.png"
+
 const formatNumber = (val: number) => {
   return parseFloat(val).toFixed(2)
 }
@@ -127,13 +132,13 @@ const AddPanel = (props) => {
       <TextContainer>
         <FlexText>
           <H4_NoScale fontSize="18px">Added liquidity</H4_NoScale>
-          <BoldStyled fontSize="18px" color="#D85439">
+          <BoldStyled fontSize="18px" color="#FFFFFF">
             {formatNumber(data.accountLiquidity)} UNT
           </BoldStyled>
         </FlexText>
         <FlexText>
           <H4_NoScale fontSize="18px">Pool Share</H4_NoScale>
-          <BoldStyled fontSize="18px" color="#D85439">
+          <BoldStyled fontSize="18px" color="#FFFFFF">
             {Math.round(
               (parseInt(data.accountLiquidity) * 100) / data.liquidity
             )}
@@ -147,22 +152,35 @@ const AddPanel = (props) => {
         type="number"
         onChange={(e) => handleChange(e.target.value)}
       />
-      <SubmitContainer>
+      <SubmitContainerNew>
         <Button onClick={() => handleAddLiquidity()} disabled={disabled}>
           Add liquidity
         </Button>
-      </SubmitContainer>
 
-      <TextContainer>
+        <FlexText style={{ textAlign: 'end', marginTop: '10px' }}>
+          <H4_NoScale fontSize="18px">Pending Fees Rewards</H4_NoScale>
+          <BoldStyled fontSize="18px" color="#D85439">
+            {pendingFees} UNT
+          </BoldStyled>
+        </FlexText>
+      </SubmitContainerNew>
+
+      {/* <TextContainer>
         <FlexText style={{ textAlign: 'center', marginTop: '20px' }}>
           <H4_NoScale fontSize="18px">Pending Fees Rewards</H4_NoScale>
           <BoldStyled fontSize="18px" color="#D85439">
             {pendingFees} UNT
           </BoldStyled>
         </FlexText>
-      </TextContainer>
+      </TextContainer> */}
       <SubmitContainer>
-        <Button onClick={() => handleWidthDrawFees()}>Claim Rewards</Button>
+        {/* <Button onClick={() => handleWidthDrawFees()}>Claim Rewards</Button> */}
+        <div id="btnSetUnitDiv2">
+            <Image id="imgSetUnit2" src={Ribbon} alt="" />
+            <button id="btnBuyUnit2" onClick={() => {
+           handleWidthDrawFees()
+          }}>Claim Rewards</button>
+          </div>
       </SubmitContainer>
     </AddPanelContainer>
   )
@@ -194,9 +212,42 @@ const BoldStyled = styled(H4Bold_NoScale)`
   padding-top: 6px;
 `
 
-const InputStyled = styled(Input)`
+const UNTInput = styled.input`
+  background: rgba(255,255,255,.3);
+  border: 0px solid #d85439;
+  //box-sizing: border-box;
+  border-radius: 50px;
+  font-size: 18px;
+padding:10px;
+  //min-width: 442px;
+  color: #ffffff;
+  //height: 55px;
+  @media (max-width: 768px) {
+    min-width: 100%;
+  }
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /*
+    padding-left: 10px;
+    margin-right: 67px;
+    display: block;
+    font-family: Nunito;
+    margin-bottom: 8px;
+    padding: 8px 20px;
+    width: 100%;
+    */
+`
+
+
+const InputStyled = styled(UNTInput)`
   margin-top: 15px;
-  width: 100%;
+  width:100% ;
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
 `
 const SubmitContainer = styled.div`
   display: flex;
@@ -206,3 +257,15 @@ const SubmitContainer = styled.div`
     padding-top: 33px;
   }
 `
+
+const SubmitContainerNew = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items:center;
+  padding-top: 70px;
+  @media (max-width: 768px) {
+    padding-top: 33px;
+  }
+`
+
+

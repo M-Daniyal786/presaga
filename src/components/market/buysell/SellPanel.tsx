@@ -14,6 +14,11 @@ import { Sell, calcSellCollateral } from '../../../services/trade'
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer, toast } from 'react-toastify'
 import { formatBigNumber } from '../../../utils/numbers'
+
+import Image from 'next/image'
+import dollar from '../../../../public/dollar.png'
+
+
 let web3: any
 const Web3 = require('web3')
 web3 = new Web3(new Web3.providers.HttpProvider(RPC_URL))
@@ -165,13 +170,21 @@ const SellPanel = (props: any) => {
         </RightText>
       </EstimatedShares>
       <SubmitContainer>
-        <Button
+        {/* <Button
           onClick={() => {
             handleSell()
           }}
         >
           Sell
-        </Button>
+        </Button> */}
+
+<div id="btnSetUnitDiv2">
+            <Image id="imgSetUnit2" src={dollar} alt="" />
+            <button id="btnBuyUnit2" onClick={() => {
+            handleSell()
+          }}>Sell UNT</button>
+          </div>
+
       </SubmitContainer>
     </SellPanelContainer>
   )
@@ -224,12 +237,41 @@ const RightText = styled(H4_NoScale)`
   }
 `
 
-const InputStyled = styled(Input)`
+const UNTInput = styled.input`
+  background: rgba(255,255,255,.3);
+  border: 0px solid #d85439;
+  //box-sizing: border-box;
+  border-radius: 50px;
+  font-size: 18px;
+padding:10px;
+  //min-width: 442px;
+  color: #ffffff;
+  //height: 55px;
+  @media (max-width: 768px) {
+    min-width: 100%;
+  }
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /*
+    padding-left: 10px;
+    margin-right: 67px;
+    display: block;
+    font-family: Nunito;
+    margin-bottom: 8px;
+    padding: 8px 20px;
+    width: 100%;
+    */
+`
+
+
+const InputStyled = styled(UNTInput)`
   margin-top: 15px;
+  
 `
 const SubmitContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   padding-top: 70px;
   @media (max-width: 768px) {
     padding-top: 33px;
