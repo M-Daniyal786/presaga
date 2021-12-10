@@ -257,3 +257,25 @@ div#btnStartDiv img {
     margin-top: 30px;
   }
 }
+
+@media only screen and (max-width: 375px) and (min-width: 320px) {
+  div#btnStartDiv:hover button#btnStart {
+    transition: 0.5s;
+    transform: translateX(-75px);
+  }
+  div#btnStartDiv:hover img {
+    transition: 0.5s;
+    transform: translateX(175px);
+  }
+}
+
+@media only screen and (max-width: 320px) and (min-width: 280px) {
+  div#btnStartDiv:hover button#btnStart {
+    transition: 0.5s;
+    transform: translateX(-70px);
+  }
+  div#btnStartDiv:hover img {
+    transition: 0.5s;
+    transform: translateX(140px);
+  }
+}

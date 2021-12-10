@@ -3,7 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 350px;
+  margin-top: 460px;
+  padding-bottom: 50px;
   flex-direction: column;
 }
 
@@ -33,106 +34,17 @@
 
 #mainDiv {
   background: url(../../public/hero.png);
-  height: 110vh;
   width: 100%;
   background-repeat: no-repeat;
-  background-size: cover;
-  margin-left: auto;
-  margin-right: auto;
+  background-size: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
 }
 
-@media only screen and (max-width: 1441px) and (min-width: 768px) {
-  #mainDiv {
-    /* height: 100vh; */
-    background-size: 100% 100%;
-  }
-}
-
-@media only screen and (max-width: 1024px) {
-  #mainDiv {
-    height: 70vh;
-  }
-  #headingMain {
-    margin-top: 260px;
-  }
-  #headingSpan {
-    margin-top: 0px;
-    padding: 20px 20px 10px 20px;
-    width: 70%;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  #mainDiv {
-    height: 50vh;
-  }
-  #headingMain {
-    margin-top: 225px;
-  }
-  #headingSpan {
-    font-size: 18px;
-    margin-top: 0px;
-    padding: 2px 25px 5px 25px;
-    width: 80%;
-  }
-  #btnSet {
-    margin-top: 25px;
-  }
-}
-
-@media only screen and (max-width: 425px) {
-  #mainDiv {
-    background-position: -100px 15px;
-    max-width: 100%;
-    height: auto;
-  }
-  #headingMain {
-    margin-top: 110px;
-  }
-  #headingSpan {
-    font-size: 13px;
-    margin-top: 0px;
-    padding: 2px 15px 2px 15px;
-    width: 90%;
-  }
-}
-@media only screen and (max-width: 375px) {
-  #mainDiv {
-    background-position: -130px 15px;
-    max-width: 100%;
-    height: auto;
-  }
-  #headingMain {
-    margin-top: 110px;
-  }
-  #headingSpan {
-    font-size: 13px;
-    margin-top: 0px;
-    padding: 2px 15px 2px 15px;
-    width: 90%;
-  }
-}
-@media only screen and (max-width: 320px) {
-  #mainDiv {
-    background-position: -160px 15px;
-    max-width: 100%;
-    height: auto;
-  }
-  #headingMain {
-    margin-top: 110px;
-  }
-  #headingSpan {
-    font-size: 13px;
-    margin-top: 0px;
-    padding: 2px 15px 2px 15px;
-    width: 90%;
-  }
-}
 #btnSet {
+  margin-top: 160px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -236,4 +148,288 @@ div#btnSetUnitDiv:hover img {
 div#btnSetUnitDiv img {
   transition: 0.5s;
   transform: translateX(0px);
+}
+
+@media screen and (max-width: 2560px) and (min-width: 1920px) {
+  #headingMain {
+    margin-top: 600px;
+    padding-bottom: 50px;
+  }
+  #headingSpan {
+    font-size: 39px;
+    padding: 30px 50px 20px 50px;
+  }
+  #btnSet {
+    margin-top: 250px;
+  }
+  .icon {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 1920px) and (min-width: 1680px) {
+  #headingMain {
+    margin-top: 400px;
+    padding-bottom: 50px;
+  }
+  #headingSpan {
+    font-size: 29px;
+    padding: 30px 50px 20px 50px;
+  }
+  #btnSet {
+    margin-top: 250px;
+  }
+  .icon {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 1680px) and (min-width: 1440px) {
+  #headingMain {
+    margin-top: 300px;
+    padding-bottom: 50px;
+  }
+  #headingSpan {
+    font-size: 39px;
+    padding: 30px 50px 20px 50px;
+  }
+  #btnSet {
+    margin-top: 250px;
+  }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 1024px) {
+  #headingMain {
+    margin-top: 350px;
+    padding-bottom: 50px;
+  }
+  #headingSpan {
+    font-size: 29px;
+    padding: 30px 50px 20px 50px;
+  }
+  #btnSet {
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  #headingMain {
+    margin-top: 200px;
+    padding-bottom: 20px;
+  }
+  #headingSpan {
+    font-size: 22px;
+    padding: 25px 50px 30px 50px;
+  }
+  #btnSet {
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 428px) {
+  #headingMain {
+    margin-top: 150px;
+    padding-bottom: 0px;
+  }
+  #headingSpan {
+    font-size: 18px;
+    padding: 10px 40px 10px 40px;
+    width: 56%;
+  }
+  #btnSet {
+    margin-top: 73px;
+  }
+  #btnLaunch {
+    font-size: 15px !important;
+  }
+  #btnLaunchDiv {
+    height: 45px;
+    width: 225px;
+  }
+
+  div#btnLaunchDiv:hover button#btnLaunch {
+    transition: 0.5s;
+    transform: translateX(-40px);
+  }
+  div#btnLaunchDiv:hover img {
+    transition: 0.5s;
+    transform: translateX(120px);
+  }
+
+  #btnBuyUnit {
+    font-size: 15px !important;
+  }
+
+  #btnSetUnitDiv {
+    height: 45px;
+    width: 225px;
+  }
+
+  div#btnSetUnitDiv:hover button#btnBuyUnit {
+    transition: 0.5s;
+    transform: translateX(-40px);
+  }
+  div#btnSetUnitDiv:hover img {
+    transition: 0.5s;
+    transform: translateX(110px);
+  }
+}
+
+@media screen and (max-width: 428px) and (min-width: 375px) {
+  #mainDiv {
+    background: url(../../public/mobile-banner.jpg);
+    background-size: cover;
+  }
+  #headingMain {
+    margin-top: 152px;
+    padding-bottom: 30px;
+  }
+  #headingSpan {
+    font-size: 18px;
+    padding: 10px 20px 10px 20px;
+    width: 80%;
+  }
+  #btnSet {
+    margin-top: 50px;
+  }
+  #btnLaunch {
+    font-size: 15px !important;
+  }
+  #btnLaunchDiv {
+    height: 45px;
+    width: 225px;
+  }
+
+  div#btnLaunchDiv:hover button#btnLaunch {
+    transition: 0.5s;
+    transform: translateX(-40px);
+  }
+  div#btnLaunchDiv:hover img {
+    transition: 0.5s;
+    transform: translateX(120px);
+  }
+
+  #btnBuyUnit {
+    font-size: 15px !important;
+  }
+
+  #btnSetUnitDiv {
+    height: 45px;
+    width: 225px;
+  }
+
+  div#btnSetUnitDiv:hover button#btnBuyUnit {
+    transition: 0.5s;
+    transform: translateX(-40px);
+  }
+  div#btnSetUnitDiv:hover img {
+    transition: 0.5s;
+    transform: translateX(110px);
+  }
+}
+
+@media screen and (max-width: 375px) and (min-width: 320px) {
+  #mainDiv {
+    background: url(../../public/mobile-banner.jpg);
+    background-size: cover;
+  }
+  #headingMain {
+    margin-top: 120px;
+    padding-bottom: 30px;
+  }
+  #headingSpan {
+    font-size: 18px;
+    padding: 10px 10px 10px 10px;
+    width: 90%;
+  }
+  #btnSet {
+    margin-top: 50px;
+  }
+  #btnLaunch {
+    font-size: 15px !important;
+  }
+  #btnLaunchDiv {
+    height: 45px;
+    width: 225px;
+  }
+
+  div#btnLaunchDiv:hover button#btnLaunch {
+    transition: 0.5s;
+    transform: translateX(-40px);
+  }
+  div#btnLaunchDiv:hover img {
+    transition: 0.5s;
+    transform: translateX(120px);
+  }
+
+  #btnBuyUnit {
+    font-size: 15px !important;
+  }
+
+  #btnSetUnitDiv {
+    height: 45px;
+    width: 225px;
+  }
+
+  div#btnSetUnitDiv:hover button#btnBuyUnit {
+    transition: 0.5s;
+    transform: translateX(-40px);
+  }
+  div#btnSetUnitDiv:hover img {
+    transition: 0.5s;
+    transform: translateX(110px);
+  }
+}
+
+@media screen and (max-width: 320px) and (min-width: 280px) {
+  #mainDiv {
+    background: url(../../public/mobile-banner.jpg);
+    background-size: cover;
+  }
+  #headingMain {
+    margin-top: 100px;
+    padding-bottom: 20px;
+  }
+  #headingSpan {
+    font-size: 18px;
+    padding: 10px 10px 10px 10px;
+    width: 90%;
+  }
+  #btnSet {
+    margin-top: 40px;
+  }
+  #btnLaunch {
+    font-size: 15px !important;
+  }
+  #btnLaunchDiv {
+    height: 45px;
+    width: 225px;
+  }
+
+  div#btnLaunchDiv:hover button#btnLaunch {
+    transition: 0.5s;
+    transform: translateX(-40px);
+  }
+  div#btnLaunchDiv:hover img {
+    transition: 0.5s;
+    transform: translateX(120px);
+  }
+
+  #btnBuyUnit {
+    font-size: 15px !important;
+  }
+
+  #btnSetUnitDiv {
+    height: 45px;
+    width: 225px;
+  }
+
+  div#btnSetUnitDiv:hover button#btnBuyUnit {
+    transition: 0.5s;
+    transform: translateX(-40px);
+  }
+  div#btnSetUnitDiv:hover img {
+    transition: 0.5s;
+    transform: translateX(110px);
+  }
 }

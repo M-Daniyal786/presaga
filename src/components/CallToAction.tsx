@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import rocket from '../../public/rocket.png'
+import rocket30x30 from '../../public/Group30x30.png'
 import dollar from '../../public/dollar.png'
 import Image from 'next/image'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -11,13 +12,14 @@ import { SiMedium, SiDiscord } from 'react-icons/si'
 
 const CallToAction = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
-  
+
   return (
     <>
       <div id="mainDiv">
+        {/* <img src="hero.png"/> */}
         <div id="btnSet">
           <div id="btnLaunchDiv">
-            <Image id="imgSet" src={rocket} alt="" />
+            <Image id="imgSet" src={rocket30x30} alt="" />
             <button
               onClick={() => {
                 location.href = 'markets'
