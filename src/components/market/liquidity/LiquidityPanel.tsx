@@ -64,7 +64,7 @@ const PanelContainer = styled.div`
 background: rgba(255,255,255,.2);
   box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.15);
   border-radius: 50px;
-  width: 100%;
+  min-width: 50%;
   margin-bottom: 100px;
   @media (max-width: 768px) {
     width: 100%;
@@ -74,8 +74,10 @@ background: rgba(255,255,255,.2);
 const Tabs = styled.div`
   display: flex;
   /* background-color: red; */
-  max-width:30%;
+  max-width:100%;
   margin-top: 20px;
+  
+  justify-content:center;
   
 `
 

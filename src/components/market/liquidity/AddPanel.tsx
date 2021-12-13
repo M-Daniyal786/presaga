@@ -216,7 +216,7 @@ const UNTInput = styled.input`
   background: rgba(255,255,255,.3);
   border: 0px solid #d85439;
   //box-sizing: border-box;
-  border-radius: 50px;
+  border-radius: 20px;
   font-size: 18px;
 padding:10px;
   //min-width: 442px;

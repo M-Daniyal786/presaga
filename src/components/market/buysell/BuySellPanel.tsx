@@ -91,7 +91,7 @@ const PanelContainer = styled.div`
   background: rgba(255,255,255,.2);
   box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.15);
   border-radius: 50px;
-  width: 100%;
+  min-width: 50%;
   margin-bottom: 100px;
   @media (max-width: 768px) {
     width: 100%;
@@ -101,8 +101,9 @@ const PanelContainer = styled.div`
 const Tabs = styled.div`
   display: flex;
   /* background-color: red; */
-  max-width:30%;
+  max-width:100%;
   margin-top: 20px;
+  justify-content: center;
   
 `
 
@@ -173,7 +174,7 @@ const Share = styled.div`
   background: ${(props) => (props.selected ? props.selectedColor : 'rgba(255,255,255,.3)')};
   padding: 8px;
   cursor: pointer;
-  border-radius: 50px;
+  border-radius: 20px;
 
   &:hover {
     background: ${(props) => (!props.selected ? props.selectedColor : '')};

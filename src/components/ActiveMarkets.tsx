@@ -92,6 +92,7 @@ const DesktopMarket = (props) => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
+              
             }}
           >
             <Loader
