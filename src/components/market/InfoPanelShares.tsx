@@ -15,19 +15,19 @@ const InfoPanelShares = (props) => {
     <PanelContainer>
       <FlexRow>
         <div>
-          <H4Bold_NoScale color="#FFFFFF">Share</H4Bold_NoScale>
+         {window.innerWidth < 480 ? <H4Bold_NoScale fontSize="15px" color="#FFFFFF">Share</H4Bold_NoScale> : <H4Bold_NoScale color="#FFFFFF">Share</H4Bold_NoScale>}  
           <H4Bold_NoScale fontSize="15px">{type}</H4Bold_NoScale>
         </div>
       </FlexRow>
       <FlexRow>
         <div>
-          <H4Bold_NoScale color="#FFFFFF">Balance</H4Bold_NoScale>
+          {window.innerWidth < 480 ? <H4Bold_NoScale fontSize="15px" color="#FFFFFF">Balance</H4Bold_NoScale> : <H4Bold_NoScale color="#FFFFFF">Balance</H4Bold_NoScale>}
           <H4Bold_NoScale fontSize="15px">
             {formatNumber(formatBigNumber(shares))}
           </H4Bold_NoScale>
         </div>
         <div>
-          <H4Bold_NoScale color="#FFFFFF">Value(UNT)</H4Bold_NoScale>
+          {window.innerWidth < 400 ? <H4Bold_NoScale fontSize="15px" color="#FFFFFF">Value<div>(UNT)</div>  </H4Bold_NoScale> : <H4Bold_NoScale color="#FFFFFF">Value(UNT)</H4Bold_NoScale>}
           <H4Bold_NoScale fontSize="15px">
             {formatNumber(price * formatBigNumber(shares))}
           </H4Bold_NoScale>

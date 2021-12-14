@@ -3,7 +3,7 @@
   padding-right: 10%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .navbar {
     padding-left: 5%;
     padding-right: 5%;
@@ -12,6 +12,7 @@
   .nav-menu-item {
     flex-direction: column;
     flex-wrap: wrap;
+    margin: 10px;
   }
 }
 

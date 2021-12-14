@@ -10,14 +10,15 @@ const InfoPanel1 = (props) => {
   return (
     <PanelContainer>
       <div>
-        <H4Bold_NoScale color="#FFFFFF">Expiration</H4Bold_NoScale>
+        {window.innerWidth < 480 ? (<H4Bold_NoScale fontSize="15px" color="#FFFFFF">Expiration</H4Bold_NoScale>) :( <H4Bold_NoScale color="#FFFFFF">Expiration</H4Bold_NoScale>)}
+       
         <H4Bold_NoScale>
           {/* {new Date(Date(data.endDate)).toLocaleDateString()} */}
         </H4Bold_NoScale>
       </div>
       <FlexRow>
         <div>
-          <H4Bold_NoScale color="#FFFFFF">Volume</H4Bold_NoScale>
+          {window.innerWidth < 480 ? (<H4Bold_NoScale fontSize="15px" color="#FFFFFF">Volume</H4Bold_NoScale>) : <H4Bold_NoScale color="#FFFFFF">Volume</H4Bold_NoScale>}
           <H4Bold_NoScale fontSize="15px" style={{ marginRight: '2px' }}>
             {formatNumber(
               data?.noSupply * data?.noPrice +
@@ -28,7 +29,7 @@ const InfoPanel1 = (props) => {
           </H4Bold_NoScale>
         </div>
         <div>
-          <H4Bold_NoScale color="#FFFFFF">Liquidity</H4Bold_NoScale>
+          {window.innerWidth < 480 ? <H4Bold_NoScale fontSize="15px" color="#FFFFFF">Liquidity</H4Bold_NoScale> : <H4Bold_NoScale color="#FFFFFF">Liquidity</H4Bold_NoScale>}
           <H4Bold_NoScale fontSize="15px">{formatNumber(data?.liquidity)} UNT</H4Bold_NoScale>
         </div>
       </FlexRow>

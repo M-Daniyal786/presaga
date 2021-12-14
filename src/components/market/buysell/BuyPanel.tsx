@@ -135,6 +135,7 @@ const BuyPanel = (props: any) => {
         type="number"
         onChange={(e) => changeValue(e.target.value)}
         value={amount}
+        
       />
       <EstimatedShares>
         <LeftText fontSize="16px">Estimated shares</LeftText>
@@ -204,7 +205,15 @@ const RightText = styled(H4_NoScale)`
   }
 `
 
- const UNTInput = styled.input`
+const UNTInput = styled.input`
+ ::-webkit-inner-spin-button{
+        -webkit-appearance: none; 
+        margin: 0; 
+    }
+    ::-webkit-outer-spin-button{
+        -webkit-appearance: none; 
+        margin: 0; 
+    } 
   background: rgba(255,255,255,.3);
   border: 0px solid #d85439;
   //box-sizing: border-box;

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, {useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import { LinkButton } from './shared/Buttons'
 import { ComponentContainer } from './shared/Containers'
@@ -7,6 +7,36 @@ import { H2, H3 } from './shared/Text'
 import ScrollContainer from 'react-indiana-drag-scroll'
 
 const WaysToEarn = () => {
+
+  useEffect(() => {
+    const slider = document.querySelector('.scroll-container')
+    let isDown = false
+    let startX
+    let scrollLeft
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true
+      slider.classList.add('active')
+      startX = e.pageX - slider.offsetLeft
+      scrollLeft = slider.scrollLeft
+    })
+    slider.addEventListener('mouseleave', () => {
+      isDown = false
+      slider.classList.remove('active')
+    })
+    slider.addEventListener('mouseup', () => {
+      isDown = false
+      slider.classList.remove('active')
+    })
+    slider.addEventListener('mousemove', (e) => {
+      if (!isDown) return
+      e.preventDefault()
+      const x = e.pageX - slider.offsetLeft
+      const walk = (x - startX) * 3 //scroll-fast
+      slider.scrollLeft = scrollLeft - walk
+      console.log(walk)
+    })
+  }, [])
+
   return (
     <div style={{ width: '100%' }}>
       <div id="setMainBody">

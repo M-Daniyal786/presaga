@@ -128,6 +128,7 @@ const AddPanel = (props) => {
       })
   }
   return (
+    <>
     <AddPanelContainer>
       <TextContainer>
         <FlexText>
@@ -157,12 +158,7 @@ const AddPanel = (props) => {
           Add liquidity
         </Button>
 
-        <FlexText style={{ textAlign: 'end', marginTop: '10px' }}>
-          <H4_NoScale fontSize="18px">Pending Fees Rewards</H4_NoScale>
-          <BoldStyled fontSize="18px" color="#D85439">
-            {pendingFees} UNT
-          </BoldStyled>
-        </FlexText>
+       
       </SubmitContainerNew>
 
       {/* <TextContainer>
@@ -173,6 +169,18 @@ const AddPanel = (props) => {
           </BoldStyled>
         </FlexText>
       </TextContainer> */}
+      
+      </AddPanelContainer>
+
+      <div style={{border: '2px solid white', marginTop:10}}></div>
+
+      <FlexText style={{ textAlign: 'center', marginTop: '10px' }}>
+          <H4_NoScale fontSize="18px">Pending Fees Rewards</H4_NoScale>
+          <BoldStyled fontSize="18px" color="#D85439">
+            {pendingFees} UNT
+          </BoldStyled>
+        </FlexText>
+
       <SubmitContainer>
         {/* <Button onClick={() => handleWidthDrawFees()}>Claim Rewards</Button> */}
         <div id="btnSetUnitDiv2">
@@ -182,7 +190,7 @@ const AddPanel = (props) => {
           }}>Claim Rewards</button>
           </div>
       </SubmitContainer>
-    </AddPanelContainer>
+      </>
   )
 }
 
@@ -213,6 +221,14 @@ const BoldStyled = styled(H4Bold_NoScale)`
 `
 
 const UNTInput = styled.input`
+::-webkit-inner-spin-button{
+        -webkit-appearance: none; 
+        margin: 0; 
+    }
+    ::-webkit-outer-spin-button{
+        -webkit-appearance: none; 
+        margin: 0; 
+    } 
   background: rgba(255,255,255,.3);
   border: 0px solid #d85439;
   //box-sizing: border-box;

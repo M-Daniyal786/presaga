@@ -10,7 +10,7 @@ const FooterFixed = () => {
   return (
       <div class=" footer-container " >
         <footer class="d-flex flex-wrap justify-content-between align-items-center col-12">
-        <p class="nav col-md-6 col-12 mb-0 font-weight-bold footerItem justify-content-md-center justify-content-center text-center">
+        <p class="nav col-md-5 col-lg-6 col-12 mb-0 font-weight-bold footerItem justify-content-md-center justify-content-center text-center">
             &copy; 2021 UnityNetwork OÜ. ALL RIGHTS RESERVED.
           </p>
           {/* <ul class="nav col-md-4 col-12 justify-content-md-start justify-content-center">
@@ -42,9 +42,9 @@ const FooterFixed = () => {
 
           
 
-        <ul class="nav col-md-6 col-12 justify-content-center align-items-center list-unstyled d-flex">
+        <ul class="nav col-md-7 col-lg-6 col-12 justify-content-center align-items-center list-unstyled d-flex">
           
-        <li class="nav-item">
+           <li class="nav-item">
               <a
                 href="#"
                 class="nav-link px-2 font-weight-bold footerItem clickable"
@@ -68,7 +68,7 @@ const FooterFixed = () => {
                 Disclaimer
               </a>
             </li>
-
+          <div style={{display:"flex"}}>
             <li class="ms-3">
               <a class="font-weight-bold footerItem icon" href="#">
                 <AiOutlineTwitter />
@@ -89,6 +89,7 @@ const FooterFixed = () => {
                 <SiDiscord />
               </a>
             </li>
+            </div>
           </ul>
         </footer>
       </div>

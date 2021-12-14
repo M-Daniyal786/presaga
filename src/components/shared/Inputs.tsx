@@ -1,6 +1,16 @@
 import styled from 'styled-components'
 
 export const Input = styled.input`
+
+::-webkit-inner-spin-button{
+        -webkit-appearance: none; 
+        margin: 0; 
+    }
+    ::-webkit-outer-spin-button{
+        -webkit-appearance: none; 
+        margin: 0; 
+    }
+    
   background: 0 0;
   border: 1px solid #d85439;
   //box-sizing: border-box;

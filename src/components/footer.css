@@ -56,3 +56,20 @@
   width: 100%;
 
 }
+
+@media screen and (max-width:768px) {
+  .footer-container {
+    font-size: 12px;
+  }
+
+  .footer-div {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width:420px) {
+  .footer-container {
+    padding-bottom: 120px;
+
+  }
+}

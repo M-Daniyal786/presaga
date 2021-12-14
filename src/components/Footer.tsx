@@ -10,7 +10,7 @@ const Footer = () => {
   return (
       <div class="footer-div" >
         <footer class="d-flex flex-wrap justify-content-between align-items-center ">
-        <p class="nav col-md-4 col-12 mb-0 font-weight-bold footerItem justify-content-md-center justify-content-center text-center">
+        <p class="nav col-md-5 col-lg-6  col-12 mb-0 font-weight-bold footerItem justify-content-md-center justify-content-center text-center">
             &copy; 2021 UnityNetwork OÜ. ALL RIGHTS RESERVED.
         </p>
          {/* ch */}
@@ -43,7 +43,7 @@ const Footer = () => {
 
           
 
-        <ul class="nav col-md-4 col-12 justify-content-center align-items-center list-unstyled d-flex">
+        <ul class="nav col-md-7 col-12 col-lg-6  justify-content-center align-items-center list-unstyled d-flex">
         <li class="nav-item">
               <a
                 href="#"
@@ -67,7 +67,8 @@ const Footer = () => {
               >
                 Disclaimer
               </a>
-            </li>
+          </li>
+          <div style={{display:"flex"}}>
             <li class="ms-3">
               <a class="font-weight-bold footerItem icon" href="#">
                 <AiOutlineTwitter />
@@ -88,6 +89,7 @@ const Footer = () => {
                 <SiDiscord />
               </a>
             </li>
+            </div>
           </ul>
         </footer>
       </div>

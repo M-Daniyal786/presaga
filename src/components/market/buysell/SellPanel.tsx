@@ -266,6 +266,14 @@ padding:10px;
 
 
 const InputStyled = styled(UNTInput)`
+::-webkit-inner-spin-button{
+        -webkit-appearance: none; 
+        margin: 0; 
+    }
+    ::-webkit-outer-spin-button{
+        -webkit-appearance: none; 
+        margin: 0; 
+    } 
   margin-top: 15px;
   
 `

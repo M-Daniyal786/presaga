@@ -93,7 +93,7 @@ window.onscroll = function() {
   
   return (
     <>
-      <nav class="navbar navbar-expand-lg sticky-top navbar-dark navbar-inner pt-5 pb-5">
+      <nav class="navbar navbar-expand-xl sticky-top navbar-dark navbar-inner pt-5 pb-5">
         <div class="container w-100">
           <a class="navbar-brand" href="/">
             {props?.folder ? (<img src={`/Presaga_logo.png`} class="navLogo" alt="PreSaga Logo" />) : (<img src="Presaga_logo.png" class="navLogo" alt="PreSaga Logo" />)}

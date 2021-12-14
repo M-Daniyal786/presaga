@@ -25,6 +25,7 @@ import { RPC_URL } from '../../config/network'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { ToastContainer, toast } from 'react-toastify'
 import FooterFixed from '../../components/Footer'
+import { minWidth } from '@mui/system'
 const marketStates = {
   NO_LIQUIDITY: 0,
   CLOSED: 'true',
@@ -48,7 +49,8 @@ const marketStyles = {
     
   },
 
-  tabButtonContainer: { display:"flex", background: "rgba(255, 255, 255, 0.2)", padding: "8px", paddingLeft:"10px",paddingRight:"10px", borderRadius:"40px", width:"40%" },
+  tabButtonContainer: { },
+  
   tabButton1: {
   borderTopLeftRadius: '30px',
   borderBottomLeftRadius: '30px',
@@ -231,7 +233,7 @@ const Market = (props) => {
                 <FlexItem flex="100%">
                 <ButtonRow id="markets" >
           
-          <div style={marketStyles.tabButtonContainer}> 
+          <TabButtonContainer style={marketStyles.tabButtonContainer}> 
           <TogButton
               style={{ ...marketStyles.tabButton1, backgroundColor: activeToggle == 'Trade' ? '#E73B22' : 'transparent', }}
             onClick={() => setActiveToggle('Trade')}
@@ -245,7 +247,7 @@ const Market = (props) => {
             Liquidity
           </TogButton>
         
-          </div>
+          </TabButtonContainer>
         </ButtonRow>
 
                 </FlexItem>
@@ -369,6 +371,13 @@ export default Market
 export const getStaticProps: GetStaticProps = async (context) => {
   return { props: {} }
 } */
+
+const TabButtonContainer = styled.div`
+  display:flex; background: rgba(255, 255, 255, 0.2); padding: 8px; padding-left:10px;padding-right:10px; border-radius:40px; width:40%;
+  @media(max-width: 768px) {
+   width:100%
+  }
+`
 
 const MarketsText = styled.div`
   color: antiquewhite;
