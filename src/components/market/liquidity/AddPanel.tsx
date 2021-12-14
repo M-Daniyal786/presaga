@@ -184,7 +184,7 @@ const AddPanel = (props) => {
       <SubmitContainer>
         {/* <Button onClick={() => handleWidthDrawFees()}>Claim Rewards</Button> */}
         <div id="btnSetUnitDiv2">
-            <Image id="imgSetUnit2" src={Ribbon} alt="" />
+            {/* <Image id="imgSetUnit2" src={Ribbon} alt="" /> */}
             <button id="btnBuyUnit2" onClick={() => {
            handleWidthDrawFees()
           }}>Claim Rewards</button>

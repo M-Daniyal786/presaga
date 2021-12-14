@@ -19,7 +19,7 @@ const CallToAction = () => {
         {/* <img src="hero.png"/> */}
         <div id="btnSet">
           <div id="btnLaunchDiv">
-            <Image id="imgSet" src={rocket30x30} alt="" />
+            {/* <Image id="imgSet" src={rocket30x30} alt="" /> */}
             <button
               onClick={() => {
                 location.href = 'markets'
@@ -31,7 +31,7 @@ const CallToAction = () => {
           </div>
 
           <div id="btnSetUnitDiv">
-            <Image id="imgSetUnit" src={dollar} alt="" />
+            {/* <Image id="imgSetUnit" src={dollar} alt="" /> */}
             <button id="btnBuyUnit">Buy UNT</button>
           </div>
         </div>

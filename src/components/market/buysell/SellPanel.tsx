@@ -179,7 +179,7 @@ const SellPanel = (props: any) => {
         </Button> */}
 
 <div id="btnSetUnitDiv2">
-            <Image id="imgSetUnit2" src={dollar} alt="" />
+            {/* <Image id="imgSetUnit2" src={dollar} alt="" /> */}
             <button id="btnBuyUnit2" onClick={() => {
             handleSell()
           }}>Sell UNT</button>

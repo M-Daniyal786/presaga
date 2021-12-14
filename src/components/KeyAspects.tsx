@@ -101,7 +101,7 @@ const KeyAspects = () => {
             Key Aspects
           </span>
           <div id="btnStartDiv" onClick={playNext}>
-            <Image id="imgSetStart" src={rocket} alt="" />
+            {/* <Image id="imgSetStart" src={rocket} alt="" /> */}
             <button id="btnStart">Start Trading Now </button>
           </div>
         </div>
