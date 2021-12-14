@@ -118,7 +118,7 @@ const Tab = styled.div`
   //border-radius: ${(props) => props.borderRadius || ''};
   /* background: ${(props) => (props.selected ? '#293847' : 'rgb(255,255,255,.2)')}; */
   /* border-left: 1px solid white; */
-  // border-bottom: ${(props) => (props.selected ? '#D85439 solid 4px;' : '')};
+  border-bottom: ${(props) => (props.selected ? '#D85439 solid 4px;' : '')};
   cursor: pointer;
 
   &:hover {
@@ -135,8 +135,8 @@ const TabBodered = styled.div`
   /* border-border-top-left-radius:50; */
   //border-radius: ${(props) => props.borderRadius || ''};
   /* background: ${(props) => (props.selected ? '#293847' : 'rgb(255,255,255,.2)')}; */
-  border-left: 1px solid white;
-  // border-bottom: ${(props) => (props.selected ? '#D85439 solid 4px;' : '')};
+  /* border-left: 1px solid white; */
+   border-bottom: ${(props) => (props.selected ? '#D85439 solid 4px;' : '')};
   cursor: pointer;
 
   &:hover {

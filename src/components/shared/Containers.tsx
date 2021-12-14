@@ -20,6 +20,7 @@ export const BodyContainer = styled.div`
 export const ComponentContainer = styled.div`
   margin-left:10%;
   /* margin-right: 10%; */
+  height:"100%";
   padding-top: 50px;  
   @media (max-width: 768px) {
     padding-top: 50px;

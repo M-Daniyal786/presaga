@@ -20,12 +20,13 @@ import Web3 from 'web3'
 
 import { ToggleButton } from '../components/shared/Buttons'
 import { RPC_URL, supportedNetworkId } from '../config/network'
+import FooterFixed from '../components/FooterFixed'
 // import marketStyles from './styles'
 
 const marketStyles = {
   imageContainer: {
-    backgroundImage: `url("dark-background-lunar.jpeg")`, backgroundPosition: 'center', backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat', height: "100vh"
+    backgroundImage: `url("dark-background-lunar.jpeg")`, backgroundPosition: 'center center', backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat', height: "100%", paddingBottom: "200px"
   },
   buttonRowContainer: {
     justifyContent: "flex-end",
@@ -152,7 +153,7 @@ const Markets = () => {
       
 
       
-      <Footer />
+      <FooterFixed />
         
         
     </div>
