@@ -25,7 +25,7 @@ const MyMarkets = (props) => {
         </>
       ) : (
         <div>
-          <H4Bold style={{ padding: '10px', color: '#d85439' }}>
+          <H4Bold style={{ padding: '10px', color: '#d85439', height:"50vh"}}>
             No markets found for you, connect your wallet and start trading now!
           </H4Bold>
         </div>

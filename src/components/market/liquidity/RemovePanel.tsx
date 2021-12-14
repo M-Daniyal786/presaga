@@ -76,7 +76,7 @@ const RemovePanel = (props) => {
                 </SubmitContainer>
               </>
             ) : (
-              <p>
+              <p style={{color:"#d85439"}}>
                 Removing liquidity will be available once market is resolved :)
               </p>
             )}

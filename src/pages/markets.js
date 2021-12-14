@@ -145,7 +145,7 @@ const Markets = () => {
         {id === supportedNetworkId ? (
           returnMarkets()
         ) : (
-          <div style={{color: 'white', display:"flex",justifyContent:"center",marginTop:100}}>
+          <div style={{color: 'white', display:"flex",justifyContent:"center",marginTop:100, height:"50vh"}}>
             Please make sure you are connected to the arbitrum testnet
           </div>
         )}
