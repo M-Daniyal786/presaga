@@ -119,7 +119,7 @@ const Market = (props) => {
 
   useEffect(()=>{executeScroll()},[market])
 
-
+//previous
   // useEffect(() => {
   
   //     loadMarket(id)
