@@ -119,6 +119,8 @@ const Market = (props) => {
 
   useEffect(()=>{executeScroll()},[market])
 
+
+  //s
   // useEffect(() => {
   
   //     loadMarket(id)
