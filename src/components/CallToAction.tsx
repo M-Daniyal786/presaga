@@ -18,12 +18,12 @@ const CallToAction = () => {
       <div id="mainDiv">
         {/* <img src="hero.png"/> */}
         <div id="btnSet">
-          <div id="btnLaunchDiv">
+          <div id="btnLaunchDiv" onClick={() => {
+                location.href = 'markets'
+              }}>
             {/* <Image id="imgSet" src={rocket30x30} alt="" /> */}
             <button
-              onClick={() => {
-                location.href = 'markets'
-              }}
+              
               id="btnLaunch"
             >
               Launch App
@@ -32,7 +32,7 @@ const CallToAction = () => {
 
           <div id="btnSetUnitDiv">
             {/* <Image id="imgSetUnit" src={dollar} alt="" /> */}
-            <button id="btnBuyUnit">Buy UNT</button>
+            <button id="btnBuyUnit">Buy</button>
           </div>
         </div>
 

@@ -66,43 +66,76 @@ const Faucet = () => {
     }
   }
   return (
-    <>
+    <Container>
       <Navbar />
       <ToastContainer />
-      <BodyContainer>
+      {/* <Body> */}
         <FaucetContainer>
+
           <Text>1- Press “ASK FAUCET”</Text>
-          <Text>2 - Wait for the confirmation message</Text>
+          <Text>2- Wait for the confirmation message</Text>
           <Text>Token address:</Text>
 
-          <p style={{ color: 'white', overflow: 'auto' }}>
+          <Para>
             0x8adfB2924092E6d99572C4092136fe7B66b7ABfD
-          </p>
+          </Para>
+
           <FundMeRow>
             <Button onClick={() => sendFunds()}>Get Test UNT </Button>
           </FundMeRow>
-          <p style={{ color: 'white', padding: '10px' }}>
+          <Para>
             This faucet drips 1000 UNT every 24 hours
-          </p>
+          </Para>
         </FaucetContainer>
-      </BodyContainer>
+      {/* </Body> */}
       <Footer />
-    </>
+    </Container>
   )
 }
 
 export default Faucet
 
 const FaucetContainer = styled.div`
-  padding-top: 104px;
+  display:flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content:stretch;
+  flex-direction: column;
+  height:70vh;
+  /* margin-left: 50px; */
+  width:100%;
+`
+
+const Para = styled.div`
+  color: white;
+  padding-top: 10px;
+  @media (max-width: 440px) {
+  font-size: 3.5vw;
+  }
+  `
+
+const Container = styled.div`
+  
+  background-image: url("dark-background-lunar.jpeg");
+  background-position: center center;
+  background-size: cover;
+  height:100%;
+`
+
+const Body = styled.div`
+  
 `
 
 const Text = styled.div`
   padding-top: 50px;
   color: #ffffff;
   font-size: 35px;
+  
   @media (max-width: 768px) {
     font-size: 27px;
+  }
+  @media (max-width: 440px) {
+  font-size: 5vw;
   }
 `
 

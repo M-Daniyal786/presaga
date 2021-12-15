@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import { useRouter } from 'next/router'
 
@@ -26,6 +26,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { ToastContainer, toast } from 'react-toastify'
 import FooterFixed from '../../components/Footer'
 import { minWidth } from '@mui/system'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 const marketStates = {
   NO_LIQUIDITY: 0,
   CLOSED: 'true',
@@ -33,7 +34,7 @@ const marketStates = {
 }
 
 const market_id_styles = {
-  imageContainer: {
+  imageContainer: { 
     backgroundImage: `url("/dark-background-lunar.jpeg")`, backgroundPosition: 'center', backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat', height: "100%"
   },
@@ -78,6 +79,8 @@ const marketStyles = {
 }
 
 const Market = (props) => {
+  const myRef = useRef(null)
+   
   const [market, setMarketState] = useState([])
   const [account, setAccount] = useState()
   const router = useRouter()
@@ -92,29 +95,40 @@ const Market = (props) => {
     router.replace(router.asPath)
     setIsRefreshing(true)
   }
+  const executeScroll = () => { myRef?.current?.scrollIntoView() }
 
-  useEffect(() => {
-    setIsRefreshing(false)
-  }, [props])
-
-  useEffect(() => {
-    async function loadMarket(id: number) {
+  async function loadMarket(id: number) {
       const web3 = new Web3(new Web3.providers.HttpProvider(RPC_URL))
 
       try {
         await getMarket(web3, id)
+        
         setIsRefreshing(true)
       } catch (error) {
         setIsRefreshing(true)
       }
 
       const user = localStorage.getItem('user')
+      
       setAccount(user)
     }
-    if (id) {
-      loadMarket(id)
-    }
-  }, [account, market, id])
+
+  useEffect(() => {
+    setIsRefreshing(false)
+  }, [props])
+
+  useEffect(()=>{executeScroll()},[market])
+
+
+  // useEffect(() => {
+  
+  //     loadMarket(id)
+  
+  // }, [account, market, id])
+
+  useEffect(() => {
+    loadMarket(id)
+  },[])
 
   const getMarket = async (web3, address) => {
     const market = await getSingleMarket(web3, address)
@@ -167,10 +181,14 @@ const Market = (props) => {
           check that you have inserted correct address and try again
         </h2>
       )} */}
-      <div style={{display:"flex",flexWrap:"wrap",justifyContent:"center"}}>
+      <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
+        
       {market.length > 0 ? (
+        
           <div style={{display:"flex",flexWrap:"wrap",justifyContent:"center", maxWidth:"80%"}}>
-          <BodyContainer>
+            
+            <BodyContainer>
+            <BackButton onClick={() => router.back()} ><ArrowBackIcon />Go Back</BackButton>
             <Row>
               <FlexContainer>
                 <FlexItem flex="100%">
@@ -252,9 +270,10 @@ const Market = (props) => {
 
                 </FlexItem>
               </Row>
-    <Row>
+              
+              <Row ref={myRef}>
                   {returnTabs()}
-</Row>
+              </Row>
             </BodyContainer>
 
           {/* <div class="container navigation mt-2">
@@ -377,6 +396,12 @@ const TabButtonContainer = styled.div`
   @media(max-width: 768px) {
    width:100%
   }
+`
+
+const BackButton = styled.div`
+   color:#ffffff;
+   cursor:pointer;
+   width:max-content;
 `
 
 const MarketsText = styled.div`

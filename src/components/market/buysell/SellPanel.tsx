@@ -182,7 +182,7 @@ const SellPanel = (props: any) => {
             {/* <Image id="imgSetUnit2" src={dollar} alt="" /> */}
             <button id="btnBuyUnit2" onClick={() => {
             handleSell()
-          }}>Sell UNT</button>
+          }}>Sell</button>
           </div>
 
       </SubmitContainer>

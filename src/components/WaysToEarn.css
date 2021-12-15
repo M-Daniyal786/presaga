@@ -74,17 +74,22 @@
 
   /* overflow: hidden; */
 }
+
 .gridscroll {
   display: inline-block;
-  -ms-overflow-style: none; /* for Internet Explorer, Edge */
-  scrollbar-width: none; /* for Firefox */
+  -ms-overflow-style: none;
+  /* for Internet Explorer, Edge */
+  scrollbar-width: none;
+  /* for Firefox */
 }
+
 /* .gridscroll img {
   margin-right: 22px;
 } */
 
 .scroll-container::-webkit-scrollbar {
-  display: none; /* for Chrome, Safari, and Opera */
+  display: none;
+  /* for Chrome, Safari, and Opera */
 }
 
 #setMainBody {
@@ -176,10 +181,11 @@
 
 @media only screen and (max-width: 2560px) {
   #imgOne {
-    width: 80%;
+    width: 50%;
   }
+
   #imgTwo {
-    width: 80%;
+    width: 50%;
   }
 }
 
@@ -187,6 +193,7 @@
   #paraWays {
     padding-right: 0px;
   }
+
   #sectionTwo {
     gap: 100px;
   }
@@ -197,31 +204,39 @@
     padding-left: 10%;
     padding-right: 10%;
   }
+
   #twoWays {
     flex-direction: column-reverse;
     gap: 30px;
     margin-top: 20px;
   }
+
   #headingOne {
     font-size: 30px;
   }
+
   #paraWays {
     padding-right: 0px;
   }
+
   #imgOne {
     width: 70%;
   }
+
   #imgTwo {
     width: 70%;
   }
+
   #sectionTwo {
     flex-direction: column;
     gap: 30px;
     grid-gap: 30px;
   }
+
   #spanHead {
     font-size: 30px;
   }
+
   #spanHeadTwo {
     font-size: 20px;
   }
@@ -231,6 +246,7 @@
   #imgOne {
     width: 50%;
   }
+
   #imgTwo {
     width: 50%;
   }
@@ -241,31 +257,39 @@
     padding-left: 10%;
     padding-right: 10%;
   }
+
   #twoWays {
     flex-direction: column-reverse;
     gap: 30px;
     margin-top: 20px;
   }
+
   #headingOne {
     font-size: 30px;
   }
+
   #paraWays {
     padding-right: 0px;
   }
+
   #imgOne {
     width: 100%;
   }
+
   #imgTwo {
     width: 100%;
   }
+
   #sectionTwo {
     flex-direction: column;
     gap: 30px;
     grid-gap: 30px;
   }
+
   #spanHead {
     font-size: 30px;
   }
+
   #spanHeadTwo {
     font-size: 20px;
   }

@@ -74,20 +74,21 @@ div#btnLaunchDiv button#btnLaunch {
   transform: translateX(0px);
 }
 
-div#btnLaunchDiv:hover button#btnLaunch {
-  transition: 0.5s;
-  transform: translateX(-60px);
-}
+/* 
+  div#btnLaunchDiv:hover button#btnLaunch {
+    transition: 0.5s;
+    transform: translateX(-60px);
+  } */
 
-div#btnLaunchDiv:hover img {
+/* div#btnLaunchDiv:hover img {
   transition: 0.5s;
   transform: translateX(160px);
-}
+} */
 
-div#btnLaunchDiv img {
+/* div#btnLaunchDiv img {
   transition: 0.5s;
   transform: translateX(0px);
-}
+} */
 
 #imgSet {
   /* position: relative !important; */
@@ -146,20 +147,20 @@ div#btnSetUnitDiv button#btnBuyUnit {
   transform: translateX(0px);
 }
 
-div#btnSetUnitDiv:hover button#btnBuyUnit {
+/* div#btnSetUnitDiv:hover button#btnBuyUnit {
   transition: 0.5s;
   transform: translateX(-60px);
-}
+} */
 
-div#btnSetUnitDiv:hover img {
+/* div#btnSetUnitDiv:hover img {
   transition: 0.5s;
   transform: translateX(160px);
-}
+} */
 
-div#btnSetUnitDiv img {
+/* div#btnSetUnitDiv img {
   transition: 0.5s;
   transform: translateX(0px);
-}
+} */
 
 /* changed button */
 
@@ -202,20 +203,20 @@ div#btnSetUnitDiv2 button#btnBuyUnit2 {
   transform: translateX(0px);
 }
 
-div#btnSetUnitDiv2:hover button#btnBuyUnit2 {
+/* div#btnSetUnitDiv2:hover button#btnBuyUnit2 {
   transition: 0.5s;
   transform: translateX(-60px);
-}
+} */
 
-div#btnSetUnitDiv2:hover img {
+/* div#btnSetUnitDiv2:hover img {
   transition: 0.5s;
   transform: translateX(160px);
-}
+} */
 
-div#btnSetUnitDiv2 img {
+/* div#btnSetUnitDiv2 img {
   transition: 0.5s;
   transform: translateX(0px);
-}
+} */
 
 
 @media screen and (max-width: 2560px) and (min-width: 1920px) {
@@ -331,15 +332,15 @@ div#btnSetUnitDiv2 img {
     width: 225px;
   }
 
-  div#btnLaunchDiv:hover button#btnLaunch {
+  /* div#btnLaunchDiv:hover button#btnLaunch {
     transition: 0.5s;
     transform: translateX(-40px);
-  }
+  } */
 
-  div#btnLaunchDiv:hover img {
+  /* div#btnLaunchDiv:hover img {
     transition: 0.5s;
     transform: translateX(120px);
-  }
+  } */
 
   #btnBuyUnit {
     font-size: 15px !important;
@@ -350,15 +351,15 @@ div#btnSetUnitDiv2 img {
     width: 225px;
   }
 
-  div#btnSetUnitDiv:hover button#btnBuyUnit {
+  /* div#btnSetUnitDiv:hover button#btnBuyUnit {
     transition: 0.5s;
     transform: translateX(-40px);
-  }
+  } */
 
-  div#btnSetUnitDiv:hover img {
+  /* div#btnSetUnitDiv:hover img {
     transition: 0.5s;
     transform: translateX(110px);
-  }
+  } */
 
   /* bbb */
   #btnBuyUnit2 {
@@ -370,15 +371,15 @@ div#btnSetUnitDiv2 img {
     width: 225px;
   }
 
-  div#btnSetUnitDiv2:hover button#btnBuyUnit2 {
+  /* div#btnSetUnitDiv2:hover button#btnBuyUnit2 {
     transition: 0.5s;
     transform: translateX(-40px);
-  }
+  } */
 
-  div#btnSetUnitDiv2:hover img {
+  /* div#btnSetUnitDiv2:hover img {
     transition: 0.5s;
     transform: translateX(110px);
-  }
+  } */
 
 
 }
@@ -413,15 +414,15 @@ div#btnSetUnitDiv2 img {
     width: 225px;
   }
 
-  div#btnLaunchDiv:hover button#btnLaunch {
+  /* div#btnLaunchDiv:hover button#btnLaunch {
     transition: 0.5s;
     transform: translateX(-40px);
-  }
+  } */
 
-  div#btnLaunchDiv:hover img {
+  /* div#btnLaunchDiv:hover img {
     transition: 0.5s;
     transform: translateX(120px);
-  }
+  } */
 
   #btnBuyUnit {
     font-size: 15px !important;
@@ -432,15 +433,15 @@ div#btnSetUnitDiv2 img {
     width: 225px;
   }
 
-  div#btnSetUnitDiv:hover button#btnBuyUnit {
+  /* div#btnSetUnitDiv:hover button#btnBuyUnit {
     transition: 0.5s;
     transform: translateX(-40px);
-  }
+  } */
 
-  div#btnSetUnitDiv:hover img {
+  /* div#btnSetUnitDiv:hover img {
     transition: 0.5s;
     transform: translateX(110px);
-  }
+  } */
 
   /* ssss */
 
@@ -453,15 +454,15 @@ div#btnSetUnitDiv2 img {
     width: 225px;
   }
 
-  div#btnSetUnitDiv2:hover button#btnBuyUnit2 {
+  /* div#btnSetUnitDiv2:hover button#btnBuyUnit2 {
     transition: 0.5s;
     transform: translateX(-40px);
-  }
+  } */
 
-  div#btnSetUnitDiv2:hover img {
+  /* div#btnSetUnitDiv2:hover img {
     transition: 0.5s;
     transform: translateX(110px);
-  }
+  } */
 
 }
 
@@ -495,15 +496,15 @@ div#btnSetUnitDiv2 img {
     width: 225px;
   }
 
-  div#btnLaunchDiv:hover button#btnLaunch {
+  /* div#btnLaunchDiv:hover button#btnLaunch {
     transition: 0.5s;
     transform: translateX(-40px);
-  }
+  } */
 
-  div#btnLaunchDiv:hover img {
+  /* div#btnLaunchDiv:hover img {
     transition: 0.5s;
     transform: translateX(120px);
-  }
+  } */
 
   #btnBuyUnit {
     font-size: 15px !important;
@@ -514,15 +515,15 @@ div#btnSetUnitDiv2 img {
     width: 225px;
   }
 
-  div#btnSetUnitDiv:hover button#btnBuyUnit {
+  /* div#btnSetUnitDiv:hover button#btnBuyUnit {
     transition: 0.5s;
     transform: translateX(-40px);
-  }
+  } */
 
-  div#btnSetUnitDiv:hover img {
+  /* div#btnSetUnitDiv:hover img {
     transition: 0.5s;
     transform: translateX(110px);
-  }
+  } */
 
   #btnBuyUnit2 {
     font-size: 15px !important;
@@ -533,15 +534,15 @@ div#btnSetUnitDiv2 img {
     width: 225px;
   }
 
-  div#btnSetUnitDiv2:hover button#btnBuyUnit2 {
+  /* div#btnSetUnitDiv2:hover button#btnBuyUnit2 {
     transition: 0.5s;
     transform: translateX(-40px);
-  }
+  } */
 
-  div#btnSetUnitDiv2:hover img {
+  /* div#btnSetUnitDiv2:hover img {
     transition: 0.5s;
     transform: translateX(110px);
-  }
+  } */
 }
 
 @media screen and (max-width: 320px) and (min-width: 280px) {
@@ -574,15 +575,15 @@ div#btnSetUnitDiv2 img {
     width: 225px;
   }
 
-  div#btnLaunchDiv:hover button#btnLaunch {
+  /* div#btnLaunchDiv:hover button#btnLaunch {
     transition: 0.5s;
     transform: translateX(-40px);
-  }
+  } */
 
-  div#btnLaunchDiv:hover img {
+  /* div#btnLaunchDiv:hover img {
     transition: 0.5s;
     transform: translateX(120px);
-  }
+  } */
 
   #btnBuyUnit {
     font-size: 15px !important;
@@ -593,7 +594,7 @@ div#btnSetUnitDiv2 img {
     width: 225px;
   }
 
-  div#btnSetUnitDiv:hover button#btnBuyUnit {
+  /* div#btnSetUnitDiv:hover button#btnBuyUnit {
     transition: 0.5s;
     transform: translateX(-40px);
   }
@@ -601,5 +602,5 @@ div#btnSetUnitDiv2 img {
   div#btnSetUnitDiv:hover img {
     transition: 0.5s;
     transform: translateX(110px);
-  }
+  } */
 }

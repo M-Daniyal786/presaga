@@ -7,6 +7,7 @@ export const BodyContainer = styled.div`
    padding-right: 10%; */
    display:"flex";
    justify-content: center;
+   align-items: center;
    width: 90%;
    padding-top: 2%;
 
