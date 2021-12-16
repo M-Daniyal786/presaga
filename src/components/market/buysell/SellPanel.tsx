@@ -65,7 +65,7 @@ const SellPanel = (props: any) => {
   )
   const handleSell = async () => {
     if (!account) {
-      toast.error('Please connect your wallet to proceed')
+      toast.error('Please connect your wallet to proceed',{  className: 'toast-styles'})
 
       return
     }
@@ -80,14 +80,14 @@ const SellPanel = (props: any) => {
     Sell(share == 'No' ? '0' : '1', convertedValue.toString(), data.address)
       .then((receipt) => {
         if (receipt.status === true) {
-          toast.success(transactionSuccessStatus(receipt.transactionHash))
+          toast.success(transactionSuccessStatus(receipt.transactionHash),{  className: 'toast-styles'})
         } else {
-          toast.error(transactionFailureStatus(receipt.transactionHash))
+          toast.error(transactionFailureStatus(receipt.transactionHash),{  className: 'toast-styles'})
         }
       })
 
       .catch((error) => {
-        toast.error(error.message)
+        toast.error(error.message,{  className: 'toast-styles'})
       })
   }
 

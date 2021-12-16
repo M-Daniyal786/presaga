@@ -37,14 +37,14 @@ const RemovePanel = (props) => {
     removeFunding(amount, market.address)
       .then((receipt) => {
         if (receipt.status === true) {
-          toast.success(transactionSuccessStatus(receipt.transactionHash))
+          toast.success(transactionSuccessStatus(receipt.transactionHash),{  className: 'toast-styles'})
         } else {
-          toast.error(transactionFailureStatus(receipt.transactionHash))
+          toast.error(transactionFailureStatus(receipt.transactionHash),{  className: 'toast-styles'})
         }
       })
 
       .catch((error) => {
-        toast.error(error.message)
+        toast.error(error.message,{  className: 'toast-styles'})
       })
   }
 

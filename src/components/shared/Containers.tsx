@@ -27,5 +27,6 @@ export const ComponentContainer = styled.div`
     padding-top: 50px;
     margin-left: 5%;
     margin-right: 5%;
+    height:70vh;
   }
 `

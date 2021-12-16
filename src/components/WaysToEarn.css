@@ -106,9 +106,9 @@
 }
 
 #preSaga {
-  background: url(../../public/preSaga.png);
+  /* background: url(../../public/preSaga.png); */
   width: 100%;
-
+  background: #00162c;
   padding-left: 15%;
   padding-right: 15%;
   padding-top: 2%;

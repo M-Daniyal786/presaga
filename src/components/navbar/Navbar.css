@@ -3,6 +3,13 @@
   padding-right: 10%;
 }
 
+.dropdown-styles {
+  transform: translateY(-15%);
+  transition: all 1s ease-in-out;
+
+}
+
+
 @media (max-width: 1024px) {
   .navbar {
     padding-left: 5%;

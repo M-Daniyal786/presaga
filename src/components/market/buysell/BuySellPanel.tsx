@@ -20,7 +20,7 @@ const BuySellPanel = (props) => {
   }
   return (
     <PanelContainer>
-      <ToastContainer />
+      <ToastContainer hideProgressBar={true} autoClose={3000} bodyStyle={{ }}/>
       <Tabs>
         <Tab
           selected={selectedTab == BUY}

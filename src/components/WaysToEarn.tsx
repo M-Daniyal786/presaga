@@ -38,7 +38,7 @@ const WaysToEarn = () => {
   }, [])
 
   return (
-    <div style={{ width: '100%' }}>
+    <div style={{ width: '100%' }} >
       <div id="setMainBody">
         <div className="three">
           <h1> How PreSaga Works?</h1>

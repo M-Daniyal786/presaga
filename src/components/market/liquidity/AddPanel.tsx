@@ -15,6 +15,7 @@ import Image from 'next/image'
 
 import Ribbon from "../../../../public/ribbon.png"
 
+
 const formatNumber = (val: number) => {
   return parseFloat(val).toFixed(2)
 }
@@ -103,28 +104,28 @@ const AddPanel = (props) => {
     addFunding(amount, data.address)
       .then((receipt) => {
         if (receipt.status === true) {
-          toast.success(transactionSuccessStatus(receipt.transactionHash))
+          toast.success(transactionSuccessStatus(receipt.transactionHash),{  className: 'toast-styles'})
         } else {
-          toast.error(transactionFailureStatus(receipt.transactionHash))
+          toast.error(transactionFailureStatus(receipt.transactionHash),{  className: 'toast-styles'})
         }
       })
 
       .catch((error) => {
-        toast.error(error.message)
+        toast.error(error.message,{  className: 'toast-styles'})
       })
   }
   const handleWidthDrawFees = () => {
     widthDrawFees(data.address)
       .then((receipt) => {
         if (receipt.status === true) {
-          toast.success(transactionSuccessStatus(receipt.transactionHash))
+          toast.success(transactionSuccessStatus(receipt.transactionHash),{  className: 'toast-styles'})
         } else {
-          toast.error(transactionFailureStatus(receipt.transactionHash))
+          toast.error(transactionFailureStatus(receipt.transactionHash),{  className: 'toast-styles'})
         }
       })
 
       .catch((error) => {
-        toast.error(error.message)
+        toast.error(error.message,{  className: 'toast-styles'})
       })
   }
   return (
@@ -172,7 +173,7 @@ const AddPanel = (props) => {
       
       </AddPanelContainer>
 
-      <div style={{border: '2px solid white', marginTop:10}}></div>
+      <div style={{border: '1px solid white', marginTop:10}}></div>
 
       <FlexText style={{ textAlign: 'center', marginTop: '10px' }}>
           <H4_NoScale fontSize="18px">Pending Fees Rewards</H4_NoScale>

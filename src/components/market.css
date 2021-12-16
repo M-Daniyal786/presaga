@@ -170,3 +170,8 @@ link.active {
   margin-left: 20px;
   text-align: center;
 }
+
+.toast-styles {
+  background-color: darkblue;
+  color: white;
+}

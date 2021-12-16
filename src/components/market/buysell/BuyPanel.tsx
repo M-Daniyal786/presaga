@@ -69,26 +69,26 @@ const BuyPanel = (props: any) => {
   )
   const handleBuy = async () => {
     if (amount == '') {
-      toast.error('Please insert a valid amount')
+      toast.error('Please insert a valid amount',{  className: 'toast-styles'})
 
       return
     }
     if (!account) {
-      toast.error('Please connect your wallet to proceed')
+      toast.error('Please connect your wallet to proceed',{  className: 'toast-styles'})
 
       return
     }
     Buy(share == 'No' ? '0' : '1', amount.toString(), data.address)
       .then((receipt) => {
         if (receipt.status === true) {
-          toast.success(transactionSuccessStatus(receipt.transactionHash))
+          toast.success(transactionSuccessStatus(receipt.transactionHash),{  className: 'toast-styles'})
         } else {
-          toast.error(transactionFailureStatus(receipt.transactionHash))
+          toast.error(transactionFailureStatus(receipt.transactionHash),{  className: 'toast-styles'})
         }
       })
 
       .catch((error) => {
-        toast.error(error.message)
+        toast.error(error.message,{  className: 'toast-styles'})
       })
   }
   const data = props.data

@@ -10,6 +10,8 @@ import '../components/ActiveMarkets.css'
 import '../components/market.css'
 import '../components/court.css'
 import '../components/CallToAction.css'
+import '../components/styles.css'
+import "../pages/404.css"
 
 const GlobalStyle = createGlobalStyle`
   body {
