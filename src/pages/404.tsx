@@ -1,12 +1,12 @@
 import Footer from '../components/Footer'
-import Navbar from '../components/navbar/Navbar'
 import styled from 'styled-components'
+import Navbar from '../components/navbar/Navbar'
 export default function FourOhFour() {
   return (
     <Container>
       <Navbar />
       <FaucetContainer>
-        <img id="fnfImg" src="404.png" />
+        <Image404 id="fnfImg" src="404.png"  />
       </FaucetContainer>
       <Footer />
     </Container>
@@ -27,4 +27,17 @@ const FaucetContainer = styled.div`
   height: 70vh;
   /* margin-left: 50px; */
   width: 100%;
+`
+
+const Image404 = styled.img`
+  height:100%;
+  width:100%;
+  @media (max-width: 425px){
+    height:50%;
+    width:50%;
+  }
+  @media (min-width: 426px and max-width: 768px){
+    height:100%;
+    width:100%;
+  }
 `

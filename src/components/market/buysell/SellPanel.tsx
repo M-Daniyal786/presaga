@@ -14,7 +14,7 @@ import { Sell, calcSellCollateral } from '../../../services/trade'
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer, toast } from 'react-toastify'
 import { formatBigNumber } from '../../../utils/numbers'
-
+import styles from  '../../styles.module.css'
 import Image from 'next/image'
 import dollar from '../../../../public/dollar.png'
 
@@ -34,6 +34,8 @@ const SellPanel = (props: any) => {
   const [sellAmount, setSellAmount] = useState()
   const [lpFeeAmount, setLpFeeAmount] = useState()
   const data = props.data
+  const customId = "custom-id-yes";
+
   useEffect(async () => {
     //const user = localStorage.getItem('user')
     const user = await getAccount()
@@ -65,7 +67,7 @@ const SellPanel = (props: any) => {
   )
   const handleSell = async () => {
     if (!account) {
-      toast.error('Please connect your wallet to proceed',{  className: 'toast-styles'})
+      toast.error('Please connect your wallet to proceed',{toastId: customId, className: styles.toast})
 
       return
     }
@@ -80,14 +82,14 @@ const SellPanel = (props: any) => {
     Sell(share == 'No' ? '0' : '1', convertedValue.toString(), data.address)
       .then((receipt) => {
         if (receipt.status === true) {
-          toast.success(transactionSuccessStatus(receipt.transactionHash),{  className: 'toast-styles'})
+          toast.success(transactionSuccessStatus(receipt.transactionHash),{toastId: customId, className: styles.toast})
         } else {
-          toast.error(transactionFailureStatus(receipt.transactionHash),{  className: 'toast-styles'})
+          toast.error(transactionFailureStatus(receipt.transactionHash),{toastId: customId, className: styles.toast})
         }
       })
 
       .catch((error) => {
-        toast.error(error.message,{  className: 'toast-styles'})
+        toast.error(error.message,{toastId: customId, className: styles.toast})
       })
   }
 

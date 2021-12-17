@@ -12,9 +12,13 @@ import { ToastContainer, toast } from 'react-toastify'
 import { getAccount, getAccountBalanceUNT } from '../../../services/account'
 import { RPC_URL, networkExplorer } from '../../../config/network'
 import { widthDrawFees } from '../../../services/trade'
+import styles from  '../../styles.module.css'
+
+
 const RemovePanel = (props) => {
   const market = props.data
   const [amount, setAmount] = useState()
+  const customId = "custom-id-yes";
 
   const transactionSuccessStatus = (hash) => (
     <div>
@@ -37,14 +41,14 @@ const RemovePanel = (props) => {
     removeFunding(amount, market.address)
       .then((receipt) => {
         if (receipt.status === true) {
-          toast.success(transactionSuccessStatus(receipt.transactionHash),{  className: 'toast-styles'})
+          toast.success(transactionSuccessStatus(receipt.transactionHash),{toastId: customId, className: styles.toast})
         } else {
-          toast.error(transactionFailureStatus(receipt.transactionHash),{  className: 'toast-styles'})
+          toast.error(transactionFailureStatus(receipt.transactionHash),{toastId: customId, className: styles.toast})
         }
       })
 
       .catch((error) => {
-        toast.error(error.message,{  className: 'toast-styles'})
+        toast.error(error.message,{toastId: customId, className: styles.toast})
       })
   }
 

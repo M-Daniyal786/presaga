@@ -14,6 +14,8 @@ import {
 } from '../../services/account'
 import Web3 from 'web3'
 import { supportedNetworkId } from '../../config/network'
+import LogoutIcon from '@mui/icons-material/Logout';
+
 const useOnClickOutside = (ref, handler) => {
   useEffect(() => {
     const listener = (event: any) => {
@@ -65,7 +67,7 @@ const Navbar = (props: any) => {
     }
 
     var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
+  window.onscroll = function() {
   var currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
     // console.log("ss", document.getElementsByClassName("navbar"))
@@ -97,7 +99,7 @@ window.onscroll = function() {
   return (
     <>
       <nav class="navbar navbar-expand-xl sticky-top navbar-dark navbar-inner pt-5 pb-5">
-        <div class="container w-100">
+        <div class="container w-100 ">
           <a class="navbar-brand" href="/">
             {props?.folder ? (<img src={`/Presaga_logo.png`} class="navLogo" alt="PreSaga Logo" />) : (<img src="Presaga_logo.png" class="navLogo" alt="PreSaga Logo" />)}
           </a>
@@ -113,10 +115,11 @@ window.onscroll = function() {
             <span class="navbar-toggler-icon"></span>
           </button>
           <div
-            class="collapse navbar-collapse nav-menu-item"
+            class="collapse navbar-collapse nav-menu-item nav-responsive"
+        
             id="navbarSupportedContent"
           >
-            <ul class="navbar-nav">
+            <ul class="navbar-nav align-items-center">
               <li class="nav-item text-center">
                 <a class="nav-link active" aria-current="page" href="/faucet">
                   Faucet
@@ -145,7 +148,7 @@ window.onscroll = function() {
                   User Guide
                 </a>
               </li>
-            </ul>
+            
             <form class="d-flex justify-content-center">
               
               
@@ -179,7 +182,7 @@ window.onscroll = function() {
 
                     </button>
                     <div class="dropdown-menu dropdown-styles" style={{ width: "100%"}} ref={toggleRef}>
-                          <a class="dropdown-item" href="#">Disconnect</a>
+                         <a class="dropdown-item" href="#"><LogoutIcon/> Disconnect</a>
                         </div> 
                     </div>)
                   : (<button
@@ -203,6 +206,7 @@ window.onscroll = function() {
                 </button>)}
           
             </form>
+            </ul>
           </div>
         </div>
       </nav>

@@ -26,7 +26,7 @@ export const Button = styled.button`
   border: none;
   margin-bottom: 1%;
   text-decoration: none;
-  color: #d85439; /*#ffffff*/
+  color: white; /*#ffffff*/
   cursor: pointer;
   text-align: center;
   transition: background 250ms ease-in-out, transform 150ms ease;
@@ -42,7 +42,7 @@ export const Button = styled.button`
   align-items: flex-start;
   padding: 6px 50px;
 
-  background: 	#000080; /*#d85439*/
+  background: 	#E73B22; /*#d85439*/
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.7);
   border-radius: 15px;
 

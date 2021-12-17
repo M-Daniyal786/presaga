@@ -14,7 +14,7 @@ import { Button } from '../../shared/Buttons'
 import { Buy } from '../../../services/trade'
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer, toast } from 'react-toastify'
-
+import styles from  '../../styles.module.css'
 import Image from 'next/image'
 
 import dollar from '../../../../public/dollar.png'
@@ -37,6 +37,10 @@ const BuyPanel = (props: any) => {
   const share = props.selectedShare
   const [account, setAccount] = useState()
   const [lpFeeAmount, setLpFeeAmount] = useState()
+
+  const customId = "custom-id-yes";
+
+
   useEffect(async () => {
     //const user = localStorage.getItem('user')
     const user = await getAccount()
@@ -69,26 +73,29 @@ const BuyPanel = (props: any) => {
   )
   const handleBuy = async () => {
     if (amount == '') {
-      toast.error('Please insert a valid amount',{  className: 'toast-styles'})
+      console.log("FFF", amount)
+      toast.error('Please insert a valid amount',{toastId: customId, className: styles.toast})
 
       return
     }
     if (!account) {
-      toast.error('Please connect your wallet to proceed',{  className: 'toast-styles'})
+      toast.error('Please connect your wallet to proceed',{toastId: customId, className: styles.toast})
 
       return
     }
     Buy(share == 'No' ? '0' : '1', amount.toString(), data.address)
       .then((receipt) => {
+        console.log("RECEIPT", receipt)
         if (receipt.status === true) {
-          toast.success(transactionSuccessStatus(receipt.transactionHash),{  className: 'toast-styles'})
+          toast.success(transactionSuccessStatus(receipt.transactionHash),{toastId: customId, className: styles.toast})
         } else {
-          toast.error(transactionFailureStatus(receipt.transactionHash),{  className: 'toast-styles'})
+          toast.error(transactionFailureStatus(receipt.transactionHash),{toastId: customId, className: styles.toast})
         }
       })
 
       .catch((error) => {
-        toast.error(error.message,{  className: 'toast-styles'})
+        console.log("error", error)
+        toast.error(error.message,{toastId: customId, className: styles.toast})
       })
   }
   const data = props.data

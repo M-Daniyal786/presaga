@@ -52,9 +52,9 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background: #000080;
+  background: #E73B22;
   border-radius: 25px;
-  color: #d85439;
+  color: white;
   width: 350px;
   height: 60px;
   border-color: tomato;
@@ -65,7 +65,7 @@
 #btnStart {
   background: transparent;
   border: none;
-  color: #d85439;
+  color: white;
   font-weight: 500;
   font-size: 22px !important;
 }
@@ -118,13 +118,13 @@ div#btnStartDiv img {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background: #000080;
+  background: #E73B22;
   border-radius: 25px;
-  color: #d85439;
+  color: white;
   font-size: 24px;
   width: 250px;
   height: 60px;
-  border-color: #000080;
+  border-color: #E73B22;
   padding-left: 50px;
   padding-right: 50px;
 }

@@ -11,6 +11,7 @@ import { getAccount, getAccountBalanceUNT } from '../../../services/account'
 import { RPC_URL, networkExplorer } from '../../../config/network'
 import { widthDrawFees, getWithdrawableFees } from '../../../services/trade'
 
+import styles from  '../../styles.module.css'
 import Image from 'next/image'
 
 import Ribbon from "../../../../public/ribbon.png"
@@ -40,6 +41,8 @@ const AddPanel = (props) => {
   const [disabled, setDisabled] = useState(false)
 
   const [pendingFees, setPendingFees] = useState(0)
+
+  const customId = "custom-id-yes";
 
   async function getPendingFees() {
     const user = await getAccount()
@@ -104,28 +107,28 @@ const AddPanel = (props) => {
     addFunding(amount, data.address)
       .then((receipt) => {
         if (receipt.status === true) {
-          toast.success(transactionSuccessStatus(receipt.transactionHash),{  className: 'toast-styles'})
+          toast.success(transactionSuccessStatus(receipt.transactionHash),{toastId: customId, className: styles.toast})
         } else {
-          toast.error(transactionFailureStatus(receipt.transactionHash),{  className: 'toast-styles'})
+          toast.error(transactionFailureStatus(receipt.transactionHash),{toastId: customId, className: styles.toast})
         }
       })
 
       .catch((error) => {
-        toast.error(error.message,{  className: 'toast-styles'})
+        toast.error(error.message,{toastId: customId, className: styles.toast})
       })
   }
   const handleWidthDrawFees = () => {
     widthDrawFees(data.address)
       .then((receipt) => {
         if (receipt.status === true) {
-          toast.success(transactionSuccessStatus(receipt.transactionHash),{  className: 'toast-styles'})
+          toast.success(transactionSuccessStatus(receipt.transactionHash),{toastId: customId, className: styles.toast})
         } else {
-          toast.error(transactionFailureStatus(receipt.transactionHash),{  className: 'toast-styles'})
+          toast.error(transactionFailureStatus(receipt.transactionHash),{toastId: customId, className: styles.toast})
         }
       })
 
       .catch((error) => {
-        toast.error(error.message,{  className: 'toast-styles'})
+        toast.error(error.message,{toastId: customId, className: styles.toast})
       })
   }
   return (

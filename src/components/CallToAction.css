@@ -59,7 +59,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background: #000080;
+  background: #E73B22;
   border-radius: 25px;
   color: white;
   width: 300px;
@@ -103,7 +103,7 @@ div#btnLaunchDiv button#btnLaunch {
 #btnLaunch {
   background: transparent;
   border: none;
-  color: #d85439;
+  color: white;
   font-weight: 500;
   font-size: 22px !important;
 }

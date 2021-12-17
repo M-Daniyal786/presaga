@@ -49,3 +49,10 @@
 .navbar.transparent.navbar-inverse .navbar-inner {
   background: rgba(0, 0, 0, 0.4);
 }
+
+
+@media screen and (max-width: 1200px) {
+  .nav-responsive {
+    justify-content: center;
+  }
+}
