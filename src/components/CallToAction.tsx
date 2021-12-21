@@ -40,7 +40,7 @@ const CallToAction = () => {
             </button>
           </div>
 
-          <div id="btnSetUnitDiv" onClick={handleOpen}>
+          <div id="btnSetUnitDiv" onClick={handleOpen} style={{cursor:"pointer"}}>
             {/* <Image id="imgSetUnit" src={dollar} alt="" /> */}
             <div id="btnBuyUnit">Buy</div>
           </div>
