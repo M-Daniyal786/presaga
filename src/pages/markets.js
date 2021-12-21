@@ -21,6 +21,7 @@ import Web3 from 'web3'
 import { ToggleButton } from '../components/shared/Buttons'
 import { RPC_URL, supportedNetworkId } from '../config/network'
 import FooterFixed from '../components/FooterFixed'
+import SearchBar from '../components/SearchBar/SearchBar'
 // import marketStyles from './styles'
 
 const marketStyles = {
@@ -142,6 +143,11 @@ const Markets = () => {
           </TogButton>
           </div>
         </ButtonRow>
+
+        <div style={{display:"flex",justifyContent:"flex-end", position:'relative', zIndex:999}}>
+        <SearchBar />
+        </div>
+        
         {id === supportedNetworkId ? (
           returnMarkets()
         ) : (

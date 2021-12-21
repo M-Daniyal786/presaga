@@ -9,6 +9,15 @@
 
 }
 
+.whitepaper {
+  margin-left: 15px;
+  padding-left: 30px !important;
+  background-image: url(../../../public/book.svg);
+  background-position: 0% 50%;
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+
 
 @media (max-width: 1024px) {
   .navbar {

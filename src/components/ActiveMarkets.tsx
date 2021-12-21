@@ -9,26 +9,54 @@ import Loader from 'react-loader-spinner'
 import { GiCrownCoin } from 'react-icons/gi'
 import { IoIosArrowForward } from 'react-icons/io'
 import { useRouter } from 'next/router'
+import { Pagination } from '@mui/material'
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import {makeStyles} from "@mui/styles"
+
+const theme = createTheme();
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+    justifyContent: "center",
+  },
+  pagination: {
+    background: "rgba(255,255,255,.1)",
+    padding: 10,
+    borderRadius:10
+    
+  }
+}));
 
 const formatNumber = (val: number) => {
   return parseFloat(val).toFixed(2)
 }
 
 const AktiveMarkets = (props) => {
+  const classes = useStyles();
   const router = useRouter()
   const data = props.data
+  console.log(data, "data")
+  const [page, setPage] = React.useState(1);
+
   const isMobile = useMediaQuery({
     query: '(max-width: 768px)',
   })
 
   return (
+    <ThemeProvider theme={theme}>
     <ComponentContainer>
       <div class="active-market-heading">
         <h1>Active Markets</h1>
       </div>
 
       {isMobile ? <MobileMarket data={data} /> : <DesktopMarket data={data} />}
-    </ComponentContainer>
+
+        <div className={classes.root}>
+          <Pagination className={classes.pagination} count={data.length%10===0 ? data.length/10 : data.length/10 +1} page={page} onChange={(event,val)=> setPage(val)} color="primary"   />
+        </div>
+      </ComponentContainer>
+      </ThemeProvider>
   )
 }
 
@@ -60,13 +88,13 @@ const DesktopMarket = (props) => {
                 }}
               >
                 <div class="col-6 marketItem">
-                  <GiCrownCoin
+                  {/* <GiCrownCoin
                     style={{
                       fontSize: '22px',
                       color: '#d85439',
                       transform: 'rotate(60deg)',
                     }}
-                  />{' '}
+                  /> */}
                   {m.question}
                 </div>
 

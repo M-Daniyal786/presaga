@@ -23,9 +23,9 @@ const ResolvedAndClosedMarkets = (props) => {
           )}{' '}
         </>
       ) : (
-        <h2 style={{ padding: '20px', color: 'gray', height:"50vh" }}>
-          No closed markets yet
-        </h2>
+        <div style={{ padding: '20px', height:"50vh", color:"white", display:"flex",justifyContent:"center" }}>
+          <h2>No resolved markets yet </h2>
+        </div>
       )}
     </ComponentContainer>
   )

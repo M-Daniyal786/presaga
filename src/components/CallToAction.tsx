@@ -9,9 +9,19 @@ import { GrReddit } from 'react-icons/gr'
 import { FaTelegramPlane } from 'react-icons/fa'
 import { LinkButton } from './shared/Buttons'
 import { SiMedium, SiDiscord } from 'react-icons/si'
+import AnimatedModal from "./Modal/AnimatedModal"
+import signal from "../../public/undraw_signal.svg"
 
 const CallToAction = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
+  const [visible, setVisible] = useState(false);
+
+  const handleOpen = () => {
+    setVisible(true)
+  }
+  const handleClose = () => {
+    setVisible(false)
+  }
 
   return (
     <>
@@ -30,9 +40,9 @@ const CallToAction = () => {
             </button>
           </div>
 
-          <div id="btnSetUnitDiv">
+          <div id="btnSetUnitDiv" onClick={handleOpen}>
             {/* <Image id="imgSetUnit" src={dollar} alt="" /> */}
-            <button id="btnBuyUnit">Buy</button>
+            <div id="btnBuyUnit">Buy</div>
           </div>
         </div>
 
@@ -67,8 +77,10 @@ const CallToAction = () => {
           </ul>
         </div>
       </div>
+      <AnimatedModal visible={visible} handleClose={handleClose} title={"You are on the wrong network, please switch to the Arbitrum Testnet to continue."}><Image src={signal} height={300}/> </AnimatedModal>
     </>
   )
 }
 
 export default CallToAction
+

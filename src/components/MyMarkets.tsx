@@ -5,6 +5,8 @@ import { useMediaQuery } from 'react-responsive'
 import { ComponentContainer } from './shared/Containers'
 import { H2, H4Bold } from './shared/Text'
 import { formatBigNumber } from '../utils/numbers'
+import investSVG from "../../public/undraw_personal_finance_tqcd.svg"
+import Image from 'next/image'
 
 const MyMarkets = (props) => {
   const data = props.data
@@ -24,10 +26,14 @@ const MyMarkets = (props) => {
           )}
         </>
       ) : (
-        <div>
-          <H4Bold style={{ padding: '10px', color: '#d85439', height:"50vh"}}>
-            No markets found for you, connect your wallet and start trading now!
-          </H4Bold>
+          <div style={{ display: "flex", justifyContent: "center",alignItems:"center", flexWrap:"nowrap",flexDirection:"column"}}>
+            {/* color: '#d85439' */}
+          <H4Bold style={{ padding: '10px', color: '#ffffff', height:"10vh"}}>
+          You haven't yet bought shares in a market. Connect your wallet and select a market to get started.
+            </H4Bold>
+            
+            <Image src={investSVG} height={300} width={300}/>
+            
         </div>
       )}
     </ComponentContainer>

@@ -12,9 +12,12 @@ import {
   loadAccount,
   disconnectAccount,
 } from '../../services/account'
-import Web3 from 'web3'
+import Web3 from 'web3' 
 import { supportedNetworkId } from '../../config/network'
 import LogoutIcon from '@mui/icons-material/Logout';
+import book from "../../../public/book.svg"
+import Image from 'next/image'
+// import DummyPDF from './dummy.pdf'
 
 const useOnClickOutside = (ref, handler) => {
   useEffect(() => {
@@ -146,6 +149,17 @@ const Navbar = (props: any) => {
                   href="https://unitynetwork.medium.com/presaga-a-summary-of-unity-networks-first-dapp-6012f84693a8"
                 >
                   User Guide
+                </a>
+              </li>
+              <li class="nav-item text-center">
+
+                <a
+                  class="nav-link active whitepaper"
+                  aria-current="page"
+                  href="./dummy.pdf" target="_blank" rel="noreferrer"
+                
+                >
+                  White Paper
                 </a>
               </li>
             

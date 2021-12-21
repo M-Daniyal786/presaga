@@ -8,12 +8,13 @@ import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import { IoMdArrowRoundBack } from 'react-icons/io'
 import { IoMdArrowRoundForward } from 'react-icons/io'
+import UnityLogo from "../../public/Unity_logo.png"
 
 const KeyAspects = () => {
   const carouselRef = useRef(null)
   const items = [
     <div id="couresolSlider">
-      <img id="couresolSliderImg" src="coin-01.png" />
+      <Image id="couresolSliderImg" src={UnityLogo}/>
       <div id="couresolSliderDiv">
         <span id="couresolSliderSpan" style={{ fontFamily: 'Raleway' }}>
           Token Name
@@ -36,7 +37,7 @@ const KeyAspects = () => {
       </div>
     </div>,
     <div id="couresolSlider">
-      <img id="couresolSliderImg" src="coin-02.png" />
+      <Image id="couresolSliderImg" src={UnityLogo} />
       <div id="couresolSliderDiv">
         <span id="couresolSliderSpan" style={{ fontFamily: 'Raleway' }}>
           Token Name
@@ -59,7 +60,7 @@ const KeyAspects = () => {
       </div>
     </div>,
     <div id="couresolSlider">
-      <img id="couresolSliderImg" src="coin-03.png" />
+      <Image id="couresolSliderImg" src={UnityLogo} />
       <div id="couresolSliderDiv">
         <span id="couresolSliderSpan" style={{ fontFamily: 'Raleway' }}>
           Token Name
@@ -144,7 +145,7 @@ const KeyAspects = () => {
           </span>
 
           <div>
-            <IoMdArrowRoundBack
+            {/* <IoMdArrowRoundBack
               size={70}
               style={{ color: 'white' }}
               onClick={playNext}
@@ -153,7 +154,7 @@ const KeyAspects = () => {
               size={70}
               style={{ color: 'white' }}
               onClick={playPrev}
-            />
+            /> */}
           </div>
         </div>
 
@@ -164,6 +165,9 @@ const KeyAspects = () => {
             items={items}
             infinite
             controlsStrategy="alternate"
+            autoPlay="true"
+            animationDuration="3000"
+            autoPlayInterval="4000"
           />
         </div>
       </div>
