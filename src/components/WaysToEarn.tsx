@@ -41,7 +41,7 @@ const WaysToEarn = () => {
     <div style={{ width: '100%' }} >
       <div id="setMainBody">
         <div className="three">
-          <h1> How PreSaga Works?</h1>
+          <h1> How PreSaga Works</h1>
           <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
             <img style={{ width: '40px', height: '40px' }} src="hand.png" />
             <span style={{ color: 'white', fontSize: '20px' }}>
@@ -52,7 +52,7 @@ const WaysToEarn = () => {
 
         <div className="scroll-container">
           <div className="gridscroll">
-            <img className="ImgWorkFlow" src="workflow.png" loading="lazy" />
+            <img className="ImgWorkFlow" src="workflow3.png" loading="lazy" />
           </div>
         </div>
       </div>

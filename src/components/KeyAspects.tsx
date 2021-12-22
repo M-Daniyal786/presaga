@@ -17,7 +17,7 @@ const KeyAspects = () => {
       <Image id="couresolSliderImg" src={UnityLogo}/>
       <div id="couresolSliderDiv">
         <span id="couresolSliderSpan" style={{ fontFamily: 'Raleway' }}>
-          Token Name
+          The Gateway Token Body
         </span>
         <span
           id="couresolSliderContent"
@@ -25,8 +25,7 @@ const KeyAspects = () => {
             fontFamily: 'Poppins',
           }}
         >
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry lorem Ipsum has been the industry's standard dummy.
+          The UNT token powers all of Unity Network's dApps, including PreSaga. With it, you'll have access to Unity's growing ecosystem of decentralized finance applications.
         </span>
         <button
           style={{ marginTop: '20px', fontFamily: 'Poppins' }}
@@ -40,7 +39,7 @@ const KeyAspects = () => {
       <Image id="couresolSliderImg" src={UnityLogo} />
       <div id="couresolSliderDiv">
         <span id="couresolSliderSpan" style={{ fontFamily: 'Raleway' }}>
-          Token Name
+        Value Over Time Body
         </span>
         <span
           id="couresolSliderContent"
@@ -48,8 +47,7 @@ const KeyAspects = () => {
             fontFamily: 'Poppins',
           }}
         >
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry lorem Ipsum has been the industry's standard dummy.
+          The UNT token gains additional use cases and potential volume with each dApp Unity Network develops.
         </span>
         <button
           style={{ marginTop: '20px', fontFamily: 'Poppins' }}
@@ -63,7 +61,7 @@ const KeyAspects = () => {
       <Image id="couresolSliderImg" src={UnityLogo} />
       <div id="couresolSliderDiv">
         <span id="couresolSliderSpan" style={{ fontFamily: 'Raleway' }}>
-          Token Name
+          Community Governance
         </span>
         <span
           id="couresolSliderContent"
@@ -71,8 +69,7 @@ const KeyAspects = () => {
             fontFamily: 'Poppins',
           }}
         >
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry lorem Ipsum has been the industry's standard dummy.
+          The UNT token puts the power back in your hands. Holders have a say in what Unity Network develops via our community governance system.
         </span>
         <button
           style={{ marginTop: '20px', fontFamily: 'Poppins' }}
@@ -101,7 +98,10 @@ const KeyAspects = () => {
           <span style={{ fontFamily: 'Raleway' }} id="keyAspectSpan">
             Key Aspects
           </span>
-          <div id="btnStartDiv" onClick={playNext}>
+          <div id="btnStartDiv" style={{cursor:"pointer"}} onClick={() => {
+            // playNext
+            location.href = 'markets'
+          }}>
             {/* <Image id="imgSetStart" src={rocket} alt="" /> */}
             <button id="btnStart">Start Trading Now </button>
           </div>
@@ -168,6 +168,7 @@ const KeyAspects = () => {
             autoPlay="true"
             animationDuration="3000"
             autoPlayInterval="4000"
+            
           />
         </div>
       </div>

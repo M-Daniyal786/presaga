@@ -71,7 +71,17 @@
 
 div#btnLaunchDiv button#btnLaunch {
   transition: 0.5s;
-  transform: translateX(0px);
+  /* transform: translateX(0px); */
+}
+
+div#btnLaunchDiv:hover button#btnLaunch {
+  color: #E73B22;
+}
+
+div#btnLaunchDiv:hover {
+
+  background-color: #ffffff;
+
 }
 
 /* 
@@ -142,15 +152,19 @@ div#btnLaunchDiv button#btnLaunch {
   overflow: inherit !important;
 }
 
-div#btnSetUnitDiv button#btnBuyUnit {
+div#btnSetUnitDiv div#btnBuyUnit {
   transition: 0.5s;
-  transform: translateX(0px);
+  /* transform: translateX(0px); */
 }
 
-/* div#btnSetUnitDiv:hover button#btnBuyUnit {
-  transition: 0.5s;
-  transform: translateX(-60px);
-} */
+div#btnSetUnitDiv:hover div#btnBuyUnit {
+  color: #ffffff;
+}
+
+div#btnSetUnitDiv:hover {
+  color: #ffffff;
+  background-color: #e73b22;
+}
 
 /* div#btnSetUnitDiv:hover img {
   transition: 0.5s;

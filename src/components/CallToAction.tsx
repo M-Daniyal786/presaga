@@ -7,10 +7,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { AiOutlineTwitter } from 'react-icons/ai'
 import { GrReddit } from 'react-icons/gr'
 import { FaTelegramPlane } from 'react-icons/fa'
-import { LinkButton } from './shared/Buttons'
+import { Button, ButtonNonHover, LinkButton } from './shared/Buttons'
 import { SiMedium, SiDiscord } from 'react-icons/si'
 import AnimatedModal from "./Modal/AnimatedModal"
 import signal from "../../public/undraw_signal.svg"
+import styled from 'styled-components'
 
 const CallToAction = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
@@ -77,10 +78,26 @@ const CallToAction = () => {
           </ul>
         </div>
       </div>
-      <AnimatedModal visible={visible} handleClose={handleClose} title={"You are on the wrong network, please switch to the Arbitrum Testnet to continue."}><Image src={signal} height={300}/> </AnimatedModal>
+      <AnimatedModal visible={visible} handleClose={handleClose} title={"You are on the wrong network, please switch to the Arbitrum Testnet to continue."}><Image src={signal} height={300}/> <SubmitContainerNew>
+        <ButtonNonHover onClick={() => console.log("running")} >
+          Switch Network
+        </ButtonNonHover>
+
+       
+      </SubmitContainerNew> </AnimatedModal>
     </>
   )
 }
 
 export default CallToAction
 
+
+const SubmitContainerNew = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items:center;
+  padding-top: 70px;
+  @media (max-width: 768px) {
+    padding-top: 33px;
+  }
+`
