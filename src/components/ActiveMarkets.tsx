@@ -35,6 +35,7 @@ const formatNumber = (val: number) => {
 const AktiveMarkets = (props) => {
   const classes = useStyles();
   const router = useRouter()
+  const {search} = props
   const data = props.data
   console.log(data, "data")
   const [page, setPage] = React.useState(1);
@@ -50,7 +51,7 @@ const AktiveMarkets = (props) => {
         <h1>Active Markets</h1>
       </div>
 
-      {isMobile ? <MobileMarket data={data} /> : <DesktopMarket data={data} />}
+        {isMobile ? <MobileMarket data={data} searchText={search}/> : <DesktopMarket data={data} searchText={search} />}
 
         <div className={classes.root}>
           <Pagination className={classes.pagination} count={data.length%10===0 ? data.length/10 : data.length/10 +1} page={page} onChange={(event,val)=> setPage(val)} color="primary"   />
@@ -60,8 +61,9 @@ const AktiveMarkets = (props) => {
   )
 }
 
-const DesktopMarket = (props) => {
+const  DesktopMarket = (props) => {
   const data = props.data
+  const {searchText} = props
   const router = useRouter()
   return (
     <>
@@ -69,51 +71,103 @@ const DesktopMarket = (props) => {
         <div class="row headerOfTable">
           <div class="col-6 h4">Market</div>
           <div class="col-2 h4">Liquidity</div>
-          <div class="col-1 h4">YES</div>
-          <div class="col-1 h4">NO</div>
+          <TransformedDiv className="col-1 h4">YES</TransformedDiv>
+          <TransformedDiv className="col-1 h4">NO</TransformedDiv>
           <div class="col-2"></div>
         </div>
         <div style={{backgroundColor:"rgba(255, 255, 255, .2)",padding:30, borderRadius:50}}>
         {data.length > 0 ? (
-          data.map((m, idx) => {
-            return (
-              <div
-                class="row marketRowItem shadow "
-                style={{borderRadius:30,padding:"3%"}}
-                onClick={() => {
-                  router.push({
-                    pathname: '/market/[id]',
-                    query: { id: m.address },
-                  })
-                }}
-              >
-                <div class="col-6 marketItem">
-                  {/* <GiCrownCoin
-                    style={{
-                      fontSize: '22px',
-                      color: '#d85439',
-                      transform: 'rotate(60deg)',
-                    }}
-                  /> */}
-                  {m.question}
-                </div>
+          // data.map((m, idx) => {
+          //   return (
+          //     <div
+          //       class="row marketRowItem shadow "
+          //       style={{borderRadius:30,padding:"3%"}}
+          //       onClick={() => {
+          //         router.push({
+          //           pathname: '/market/[id]',
+          //           query: { id: m.address },
+          //         })
+          //       }}
+          //     >
+          //       <div class="col-6 marketItem">
+          //         {/* <GiCrownCoin
+          //           style={{
+          //             fontSize: '22px',
+          //             color: '#d85439',
+          //             transform: 'rotate(60deg)',
+          //           }}
+          //         /> */}
+          //         {m.question}
+          //       </div>
 
-                <div class="col-2 marketItem">{formatNumber(m.liquidity)}</div>
+          //       <div class="col-2 marketItem">{formatNumber(m.liquidity)}</div>
 
-                <div class="col-1 marketItem">
-                  {parseFloat(m.yesPrice).toFixed(2)}
-                </div>
+          //       <div class="col-1 marketItem">
+          //         {parseFloat(m.yesPrice).toFixed(2)}
+          //       </div>
 
-                <div class="col-1 marketItem ">
-                  {parseFloat(m.noPrice).toFixed(2)}
-                </div>
+          //       <div class="col-1 marketItem ">
+          //         {parseFloat(m.noPrice).toFixed(2)}
+          //       </div>
 
-                <div class="col-2 marketItemIcon">
-                  Go to Market <IoIosArrowForward />
-                </div>
+          //       <div class="col-2 marketItemIcon">
+          //         Go to Market <IoIosArrowForward />
+          //       </div>
+          //     </div>
+          //   )
+          // })
+          
+        // }
+
+        data.filter((item) => {
+          if (searchText === "") {
+            // console.log(item)
+              return item;
+          }
+          else if(item.question.toLowerCase().includes(searchText.toLowerCase())){
+              return item
+          }
+
+      }).map((m, idx) => {
+          return (
+            <div
+              class="row marketRowItem shadow "
+              style={{borderRadius:30,padding:"3%"}}
+              onClick={() => {
+                router.push({
+                  pathname: '/market/[id]',
+                  query: { id: m.address },
+                })
+              }}
+            >
+              <div class="col-6 marketItem">
+                {/* <GiCrownCoin
+                  style={{
+                    fontSize: '22px',
+                    color: '#d85439',
+                    transform: 'rotate(60deg)',
+                  }}
+                /> */}
+                {m.question}
               </div>
-            )
-          })
+
+              <div class="col-2 marketItem">{formatNumber(m.liquidity)}</div>
+
+              <div class="col-1 marketItem">
+                {parseFloat(m.yesPrice).toFixed(2)}
+              </div>
+
+              <div class="col-1 marketItem ">
+                {parseFloat(m.noPrice).toFixed(2)}
+              </div>
+
+              <div class="col-2 marketItemIcon">
+                Go to Market <IoIosArrowForward />
+              </div>
+            </div>
+          )
+        })
+        
         ) : (
           <div
             style={{
@@ -143,6 +197,7 @@ const DesktopMarket = (props) => {
 
 const MobileMarket = (props) => {
   const data = props.data
+  const {searchText} = props
 
   return (
     <Table>
@@ -158,7 +213,16 @@ const MobileMarket = (props) => {
         </Column>
       </Header>
 
-      {data.map((m, idx) => {
+      {data.filter((item) => {
+        if (searchText === "") {
+          // console.log(item)
+          return item;
+        }
+        else if (item.question.toLowerCase().includes(searchText.toLowerCase())) {
+          return item
+        }
+
+      }).map((m, idx) => {
         return (
           <Link key={idx} href={`/market/${m.address}`}>
             <Row>
@@ -175,6 +239,24 @@ const MobileMarket = (props) => {
           </Link>
         )
       })}
+
+      {/* {data.map((m, idx) => {
+        return (
+          <Link key={idx} href={`/market/${m.address}`}>
+            <Row>
+              <MarketColumn>
+                <H4Bold>{m.question}</H4Bold>
+              </MarketColumn>
+              <Column>
+                <H4Bold>{parseFloat(m.noPrice).toFixed(2)}</H4Bold>
+              </Column>
+              <Column>
+                <H4Bold>{parseFloat(m.yesPrice).toFixed(2)}</H4Bold>
+              </Column>
+            </Row>
+          </Link>
+        )
+      })} */}
     </Table>
   )
 }
@@ -236,4 +318,8 @@ const UNT = styled.div`
   border-radius: 5px;
   color: #d85439;
   padding: 2px 6px;
+`
+
+const TransformedDiv = styled.div`
+  transform: translateX(-25%);
 `
